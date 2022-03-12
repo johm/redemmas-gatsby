@@ -1,0 +1,35 @@
+{
+  "Main" : {
+    "menu_links" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "url" : {
+            "type" : "Link",
+            "config" : {
+              "allowTargetBlank" : true,
+              "label" : "URL",
+              "select" : null
+            }
+          },
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading3",
+              "label" : "title"
+            }
+          }
+        },
+        "label" : "Menu links"
+      }
+    },
+    "footer" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank" : true,
+        "label" : "Footer"
+      }
+    }
+  }
+}

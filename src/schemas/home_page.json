@@ -1,0 +1,42 @@
+{
+  "Main" : {
+    "about" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank" : true,
+        "label" : "About"
+      }
+    },
+    "image_blocks" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "image"
+            }
+          },
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1,heading3,heading4,heading5,heading6",
+              "label" : "Title"
+            }
+          },
+          "link" : {
+            "type" : "Link",
+            "config" : {
+              "label" : "Link",
+              "select" : null
+            }
+          }
+        },
+        "label" : "Image blocks"
+      }
+    }
+  }
+}
