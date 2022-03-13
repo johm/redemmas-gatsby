@@ -19,7 +19,7 @@ module.exports = {
 	{
 	    resolve: `gatsby-plugin-theme-ui`,
 	},
-	require.resolve(`../source-borges`),
+	require.resolve(`./source-borges`),
 	{
 
 	
