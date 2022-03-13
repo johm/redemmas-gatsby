@@ -31,20 +31,20 @@ module.exports = {
 		useSideCart: true,
 	    }
 	},
+//{
+	//	    resolve: "gatsby-plugin-google-analytics",
+	//	    options: {
+	//		trackingId: process.env.GOOGLE_TRACKING_ID,
+	//	    },
+	//},
+	"gatsby-plugin-postcss",
+	"gatsby-plugin-react-helmet",
+	"gatsby-plugin-sitemap",
+	"gatsby-plugin-sharp",
+	"gatsby-transformer-sharp",
 	{
-	    resolve: "gatsby-plugin-google-analytics",
+	    resolve: "gatsby-source-filesystem",
 	    options: {
-		trackingId: "TK",
-	    },
-      },
-      "gatsby-plugin-postcss",
-      "gatsby-plugin-react-helmet",
-      "gatsby-plugin-sitemap",
-      "gatsby-plugin-sharp",
-      "gatsby-transformer-sharp",
-      {
-	  resolve: "gatsby-source-filesystem",
-	  options: {
              name: "images",
               path: "./src/images",
 	  },
@@ -59,10 +59,10 @@ module.exports = {
               linkResolver: require('./src/utils/linkResolver').linkResolver,
 	  },
       },
-      "gatsby-plugin-image",
-      {
-    resolve: `gatsby-source-airtable`,
-    options: {
+	"gatsby-plugin-image",
+	{
+	    resolve: `gatsby-source-airtable`,
+	    options: {
       apiKey: process.env.AIRTABLE_API_KEY, // may instead specify via env, see below
       concurrency: 5, // default, see using markdown and attachments for more information
       tables: [
