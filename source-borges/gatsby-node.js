@@ -171,7 +171,7 @@ exports.sourceNodes = async ({
     )
 
     
-    Array.from(authorsSet).forEach(author =>
+    Array.from(authorsSet).filter(a => a !== null).forEach(author =>
 	createNode({
 	    ...author,
 	    id: createNodeId(`${AUTHOR_NODE_TYPE}-${author.id}`),
