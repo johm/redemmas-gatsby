@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import { Seo } from '../components/Seo'
+import { Seo } from '../components/seo.js'
 //import { SliceZone } from '../components/SliceZone'
 
 //	    <Seo title={doc.data.title.text} />

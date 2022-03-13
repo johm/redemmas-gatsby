@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import { Seo } from '../../components/Seo'
+import { Seo } from '../../components/seo.js'
 import InnerLayout from "../../components/InnerLayout.js"
 
 import Book from "../../components/Book.js"
 import Contributors from '../../components/contributors'
-import BuyButtons from '../../components/BuyButtons'
+import BuyButtons from '../../components/BuyButtons.js'
 import BookSearchForm from "../../components/BookSearchForm.js"
 
 //	    <Seo title={doc.data.title.text} />
