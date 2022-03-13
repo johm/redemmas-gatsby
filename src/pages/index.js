@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import SEO from "../components/seo"
 //import Layout from '../components/Layout'
-import Logo from '../components/Logo'
+import Logo from '../components/logo'
 
 
 
