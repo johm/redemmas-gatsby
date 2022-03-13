@@ -22,6 +22,8 @@ const TitleTemplate = ({ data }) => {
     
     return (
 	<InnerLayout>
+	{doc.latest_published_edition !== null && 
+	
 	<div className="flex flex-wrap">    
 	<div className="sm:w-1/3 w-full mb-3">
 	<img className="object-contain w-full object-right-top" src={'https://redemmas.org'+ doc.latest_published_edition.cover_image_url} />
@@ -118,7 +120,8 @@ const TitleTemplate = ({ data }) => {
 	    <BookSearchForm />
 	</div>
 
-	
+	</div>
+}
 	</InnerLayout>
 	
     )
