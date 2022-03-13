@@ -17,7 +17,7 @@ const TitleTemplate = ({ data }) => {
 
     const other_editions=doc.editions.filter(e => e.id !== doc.latest_published_edition.id)
 
-    const by_same_authors=doc.contributions.flatMap((c) => c.author.titles)
+    const by_same_authors=doc.contributions.flatMap((c) => c.author !== null ? c.author.titles :  [])
 
     
     return (
