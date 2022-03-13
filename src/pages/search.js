@@ -10,7 +10,7 @@ import Book from "../components/Book.js"
 const SearchPage = ({location}) => {
 
     const [formData, setFormData] = useState({
-	query: location.state.query,
+	query: location.state ? location.state.query : "",
     })
 
     const [resultData, setResultData] = useState({
