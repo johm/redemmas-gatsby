@@ -27,7 +27,7 @@ const AUTHOR_NODE_TYPE = `Author`
 
 
 const client = new ApolloClient({
-    link: new HttpLink({ uri:"https://redemmas.org/graphql", fetch }),
+    link: new HttpLink({ uri:"http://192.168.1.56:3000/graphql", fetch }),
     cache: new InMemoryCache(),
 })
 
