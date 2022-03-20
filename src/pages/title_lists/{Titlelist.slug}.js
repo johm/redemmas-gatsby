@@ -19,7 +19,7 @@ const TitlelistTemplate = ({ data }) => {
 	    </div>
 
 	    <div className="grid grid-cols-3 gap-8 mt-12 auto-rows-fr">
-		{doc.titles.map((t,index) => {
+		{doc.titles.filter(t => t !== null && t.latest_published_edition !== null ).map((t,index) => {
 		    return (
 			<Book title={t} edition={t.latest_published_edition} />
 		)})}
