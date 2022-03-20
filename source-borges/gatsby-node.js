@@ -137,8 +137,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(title),
 	    },
 	})
-
-	    console.log("Created title " + title.title )
+	    console.log("Created title " + title.title)
 	    
 	    title.categories.forEach(category =>
 		categoriesSet.add(category)
@@ -149,13 +148,13 @@ const client = new ApolloClient({
 	    title.titlelists.forEach(titlelist =>
 		titlelistsSet.add(titlelist)
 	    )
-
-
 	}
     )
     
     
     Array.from(categoriesSet).forEach(category =>
+	{
+	console.log("Creating category " + category.name )
 	createNode({
 	    ...category,
 	    id: createNodeId(`${CATEGORY_NODE_TYPE}-${category.id}`),
@@ -167,10 +166,11 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(category),
 	    },
 	})
-	console.log("Created category " + category.name )
+	}
     )
 
     Array.from(titlelistsSet).forEach(titlelist =>
+	{
 	createNode({
 	    ...titlelist,
 	    id: createNodeId(`${TITLELIST_NODE_TYPE}-${titlelist.id}`),
@@ -182,11 +182,13 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(titlelist),
 	    },
 	})
-	console.log("Created titlelist " + titlelist.name )
+	    console.log("Created titlelist " + titlelist.name )
+	}
     )
 
     
     Array.from(authorsSet).filter(a => a !== null).forEach(author =>
+	{
 	createNode({
 	    ...author,
 	    id: createNodeId(`${AUTHOR_NODE_TYPE}-${author.id}`),
@@ -198,25 +200,13 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(author),
 	    },
 	})
+	    console.log("Created author " + author.fullName)
+	}
     )
 
     return
     
 }
-
-// exports.createSchemaCustomization = ({ actions }) => {
-//    const { createTypes } = actions
-//    createTypes(
-//	`
-//	    type Titlelist implements Node {
-//		titles: [Title] @link(by:"key",from:"title.key")
-//	    },
-//	    type TitleTitlelists implements Node {
-//		titles: [Title] @link(by:"key")
-//	    },
-//	
-//	`
-//)}
 
 
 exports.createResolvers = ({ createResolvers }) => {
