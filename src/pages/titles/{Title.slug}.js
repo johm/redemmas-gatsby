@@ -11,6 +11,28 @@ import BookSearchForm from "../../components/BookSearchForm.js"
 
 //	    <Seo title={doc.data.title.text} />
 
+
+export async function config() {
+  const { data } = graphql`
+    {
+      someTitles: allTitle(
+          filter: { updatedAt: { lt: "2023-10-31" } } 
+      ) {
+          nodes {
+              slug
+	  }
+      }
+    }
+  `
+  const someTitles = new Set(data.someTitles.nodes.map(n => n.slug))
+  return ({ params }) => {
+    return {
+      defer: someTitles.has(params.slug)
+    }
+  }
+}
+
+
 const TitleTemplate = ({ data }) => {
     if (!data) return null
     const doc = data.title
@@ -105,7 +127,7 @@ const TitleTemplate = ({ data }) => {
 				    <a href={"/title_lists/"+tl.slug}>{ tl.name }</a>
 				</div>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 auto-rows-fr">
-				    {tl.titles.filter(t => t.id !== doc.id).map((t,index) => {
+				    {tl.titles.filter(t => t !== null && t.id !== doc.id).map((t,index) => {
 					return (
 					    <Book title={t} edition={t.latest_published_edition} />
 				    )})}

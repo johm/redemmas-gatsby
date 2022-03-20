@@ -85,7 +85,7 @@ const BooksPage = () => {
 			</div>
 
 			<div className="grid md:grid-cols-2 lg:grid-cols-4  gap-8 mt-12 auto-rows-fr">
-			    {edgeItem.node.titles.map((t,index) => {
+			    {edgeItem.node.titles.filter(t => t !== null).map((t,index) => {
 				return (
 				    <Book title={t} edition={t.latest_published_edition} />
 			    )})}

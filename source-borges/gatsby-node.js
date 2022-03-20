@@ -15,7 +15,15 @@ const fetch = require("cross-fetch")
  *
  * See: https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project
  */
-exports.onPreInit = () => console.log("Loaded gatsby-source-borges")
+
+var inventoryServer=""
+
+exports.onPreInit = (_, pluginOptions) => {
+    console.log("Loaded gatsby-source-borges")
+    inventoryServer=pluginOptions.inventoryServer
+    console.log("Setting inventory server to " + inventoryServer)
+}
+
 
 
 
@@ -26,10 +34,6 @@ const TITLELIST_NODE_TYPE = `Titlelist`
 const AUTHOR_NODE_TYPE = `Author`
 
 
-const client = new ApolloClient({
-    link: new HttpLink({ uri:"http://192.168.1.56:3000/graphql", fetch }),
-    cache: new InMemoryCache(),
-})
 
 
 exports.sourceNodes = async ({
@@ -41,19 +45,25 @@ exports.sourceNodes = async ({
 }) => {
     const { createNode } = actions
 
+const client = new ApolloClient({
+    link: new HttpLink({ uri:inventoryServer+"/graphql", fetch }),
+    cache: new InMemoryCache(),
+})
+
+    
     const categoriesSet=new Set();
     const authorsSet=new Set();
     const titlelistsSet=new Set();
     
-    const updated_at = await cache.get(`timestamp`)
+    const updated_at = await cache.get(`timestamped`)
 
 
 
     const { data } = await client.query({
-	variables: { updated_at: updated_at },
+
 	query: 		   gql`
-	    query GetBorges($updated_at: ISO8601DateTime) {
-		titles (updatedAt: $updated_at) {
+	    query GetBorges {
+		titles  {
 		    id
 		    key
 		    title
@@ -189,9 +199,23 @@ exports.sourceNodes = async ({
     
 }
 
+// exports.createSchemaCustomization = ({ actions }) => {
+//    const { createTypes } = actions
+//    createTypes(
+//	`
+//	    type Titlelist implements Node {
+//		titles: [Title] @link(by:"key",from:"title.key")
+//	    },
+//	    type TitleTitlelists implements Node {
+//		titles: [Title] @link(by:"key")
+//	    },
+//	
+//	`
+//)}
+
 
 exports.createResolvers = ({ createResolvers }) => {
-    const resolvers = {
+		const resolvers = {
 	Category: {
 	    titles: {
 		type: ["Title"],
@@ -208,7 +232,7 @@ exports.createResolvers = ({ createResolvers }) => {
 		},
 	    },
 	},
-	Titlelist: {
+		    Titlelist: {
 	    titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
@@ -240,8 +264,10 @@ exports.createResolvers = ({ createResolvers }) => {
 		},
 	    },
 	},
-	Author: {
-	    titles: {
+		    
+
+		    Author: {
+			titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
 		    const { entries } = await context.nodeModel.findAll({
@@ -278,7 +304,12 @@ exports.createResolvers = ({ createResolvers }) => {
 
 
 
+
+
+
 exports.onPostBuild = async ({ cache }) => {
     // set a timestamp at the end of the build
-    await cache.set(`timestamp`, Date.now())
+    const thedate=new Date().toISOString()
+    await cache.set("timestamped", thedate)
+    console.log("borges finished")
 }
