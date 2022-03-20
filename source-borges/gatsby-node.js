@@ -137,6 +137,9 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(title),
 	    },
 	})
+
+	    console.log("Created title " + title.title )
+	    
 	    title.categories.forEach(category =>
 		categoriesSet.add(category)
 	    )
@@ -164,6 +167,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(category),
 	    },
 	})
+	console.log("Created category " + category.name )
     )
 
     Array.from(titlelistsSet).forEach(titlelist =>
@@ -178,6 +182,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(titlelist),
 	    },
 	})
+	console.log("Created titlelist " + titlelist.name )
     )
 
     
@@ -301,9 +306,6 @@ exports.createResolvers = ({ createResolvers }) => {
     }
     createResolvers(resolvers)
 }
-
-
-
 
 
 
