@@ -17,6 +17,9 @@ const SearchPage = ({location}) => {
 	results:[]
     })
 
+    const [url, setUrl] = useState(`https://redemmas.org/search`)
+
+    
     const doSearch = () => {
 	fetch(`${process.env.GATSBY_INVENTORY_SERVER}/titles.json?searchquery=${formData.query}`)
 	 .then(response => response.json()) // parse JSON from request
@@ -33,12 +36,13 @@ const SearchPage = ({location}) => {
     
     const handleSubmit = (e) => {
 	e.preventDefault()
+	setUrl(`https://redemmas.org/search?query=${formData}`)
 	doSearch()
     }
 
     useEffect(() => {
 	doSearch()
-    });
+    },[url]);
 
 
     return (

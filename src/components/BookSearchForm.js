@@ -17,9 +17,10 @@ const BookSearchForm = () => {
     
     const handleSubmit = (e) => {
 	e.preventDefault()
+	setFormData({...formData, searchquery: e.target.value})
 	console.log(formData.searchquery)
 	navigate("/search/",
-	{state: {query: formData.searchquery}})
+		 {state: {query: formData.searchquery}})
 	
     }
 
