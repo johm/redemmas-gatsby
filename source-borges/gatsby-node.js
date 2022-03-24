@@ -58,7 +58,7 @@ const client = new ApolloClient({
     const updated_at = await cache.get(`timestamped`)
 
 
-
+//make publisherName not a method call so can be eager loaded
     const { data } = await client.query({
 
 	query: 		   gql`
@@ -77,7 +77,7 @@ const client = new ApolloClient({
 			list_price
 			isbn13
 			year_of_publication
-			publisherName
+			publisher {name}
 		    }
 		    
 		    latest_published_edition {
@@ -88,7 +88,8 @@ const client = new ApolloClient({
 			list_price
 			isbn13
 			year_of_publication
-			publisherName
+			publisher {name}
+
 		    }
 		    
 		    contributions {
@@ -110,7 +111,7 @@ const client = new ApolloClient({
 			image_url
 		    }
 
-		    titlelists {
+		    title_lists {
 			id
 			key
 			name
@@ -145,7 +146,7 @@ const client = new ApolloClient({
 	    title.contributions.forEach(c =>
 		authorsSet.add(c.author)
 	    )
-	    title.titlelists.forEach(titlelist =>
+	    title.title_lists.forEach(titlelist =>
 		titlelistsSet.add(titlelist)
 	    )
 	}
@@ -182,7 +183,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(titlelist),
 	    },
 	})
-	    console.log("Created titlelist " + titlelist.name )
+	    console.log("Created title_list " + titlelist.name )
 	}
     )
 
@@ -234,7 +235,7 @@ exports.createResolvers = ({ createResolvers }) => {
 		    const { entries } = await context.nodeModel.findAll({
 			query: {
 			    filter: {
-				titlelists: {elemMatch: {key: {eq: source.key}}}
+				title_lists: {elemMatch: {key: {eq: source.key}}}
 			    },
 			},
 			type: "Title",
@@ -243,14 +244,14 @@ exports.createResolvers = ({ createResolvers }) => {
 		},
 	    },
 	},
-	TitleTitlelists: {
+	TitleTitle_lists: {
 	    titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
 		    const { entries } = await context.nodeModel.findAll({
 			query: {
 			    filter: {
-				titlelists: {elemMatch: {key: {eq: source.key}}}
+				title_lists: {elemMatch: {key: {eq: source.key}}}
 			    },
 			},
 			type: "Title",

@@ -51,7 +51,7 @@ const EventsPage = () => {
     return (
 	<InnerLayout>
 	    <h1 className="text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Upcoming events</h1>
-	    <div class="md:grid grid-cols-2 gap-8 mt-12 auto-rows-fr">
+	    <div class="md:grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12 auto-rows-fr">
 		{eventsData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > Date.now()).map((e,index) => {
 		    return (
 			<div className="">
