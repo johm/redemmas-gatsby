@@ -251,8 +251,6 @@ export const query = graphql`
 		list_price
 		year_of_publication
 		isbn13
-		publisher_name
-
 	    }
 	}
     }

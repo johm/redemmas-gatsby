@@ -200,22 +200,20 @@ const client = new ApolloClient({
 
 
 exports.createResolvers = ({ createResolvers }) => {
-		const resolvers = {
-		    Title: {
-			latest_published_edition: {
-			    type: "Edition",
-			    resolve: async (source,args,context,info) => {
-				const {entry} = await context.nodeModel.findOne({
-				    type: "Edition",
-				    query: {
-					filter: {key: {eq: source.lpe}} 
-				    }
-				}
-				)
-			    }
-			}
-		    },
-		    Category: {
+    const resolvers = {
+	Title: {
+	    latest_published_edition: {
+		type: "Edition",
+		resolve (source,args,context,info) {
+//		    const editions = context.nodeModel.getAllNodes({
+//			type: "Edition",
+//		    })
+		    return source.editions.find(x => x.key === source.lpe)
+		}
+
+	    }
+	},
+	Category: {
 	    titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
@@ -301,6 +299,23 @@ exports.createResolvers = ({ createResolvers }) => {
     createResolvers(resolvers)
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+    type Edition implements Node {
+id: ID,
+      key: Int,
+isbn13: String,
+publisher_name: String,
+year_of_publication: String,
+list_price: String,
+cover_image_url: String,
+opengraph_image_url: String
+
+    }
+    `
+    createTypes(typeDefs)
+}
 
 
 exports.onPostBuild = async ({ cache }) => {
