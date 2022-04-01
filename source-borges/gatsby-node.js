@@ -69,6 +69,7 @@ const client = new ApolloClient({
 		    title
 		    slug
 		    updatedAt
+		    lpe
 		    editions {
 			id
 			key
@@ -77,21 +78,9 @@ const client = new ApolloClient({
 			list_price
 			isbn13
 			year_of_publication
-			publisher {name}
+			publisher_name
 		    }
-		    
-		    latest_published_edition {
-			id
-			key
-			cover_image_url
-			opengraph_image_url
-			list_price
-			isbn13
-			year_of_publication
-			publisher {name}
-
-		    }
-		    
+		 		    
 		    contributions {
 			author {
 			    id 
@@ -138,7 +127,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(title),
 	    },
 	})
-	    console.log("Created title " + title.title)
+//	    console.log("Created title " + title.title)
 	    
 	    title.categories.forEach(category =>
 		categoriesSet.add(category)
@@ -212,7 +201,21 @@ const client = new ApolloClient({
 
 exports.createResolvers = ({ createResolvers }) => {
 		const resolvers = {
-	Category: {
+		    Title: {
+			latest_published_edition: {
+			    type: "Edition",
+			    resolve: async (source,args,context,info) => {
+				const {entry} = await context.nodeModel.findOne({
+				    type: "Edition",
+				    query: {
+					filter: {key: {eq: source.lpe}} 
+				    }
+				}
+				)
+			    }
+			}
+		    },
+		    Category: {
 	    titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
@@ -229,7 +232,7 @@ exports.createResolvers = ({ createResolvers }) => {
 	    },
 	},
 		    Titlelist: {
-	    titles: {
+			titles: {
 		type: ["Title"],
 		resolve: async (source, args, context, info) => {
 		    const { entries } = await context.nodeModel.findAll({

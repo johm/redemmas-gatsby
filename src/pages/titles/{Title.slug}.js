@@ -61,7 +61,7 @@ const TitleTemplate = ({ data }) =>{
 			 <div className=" text-2xl font-subhed uppercase mt-6 leading-tight">
 			     <Contributors title={doc} />
 			 </div>
-			 <div className="mt-3 text-sm  font-subhed uppercase text-stone-500">{doc.latest_published_edition.publisher.name} <br />   {doc.latest_published_edition.isbn13}  <br />{doc.latest_published_edition.year_of_publication}</div> 
+			 <div className="mt-3 text-sm  font-subhed uppercase text-stone-500">{doc.latest_published_edition.publisher_name} <br />   {doc.latest_published_edition.isbn13}  <br />{doc.latest_published_edition.year_of_publication}</div> 
 			 <div className=" mt-6 font-subhed text-xl">
 			     <div>${doc.latest_published_edition.list_price}</div>
 			     
@@ -178,7 +178,7 @@ export const query = graphql`
 			opengraph_image_url
 			list_price
 			year_of_publication
-			publisher {name}
+			publisher_name
 		    }
 		    
 		    contributions {
@@ -216,7 +216,7 @@ export const query = graphql`
 			    opengraph_image_url
 			    list_price
 			    year_of_publication
-			    publisher {name}
+			    publisher_name
 			}
 			
 			contributions {
@@ -239,7 +239,7 @@ export const query = graphql`
 		list_price
 		year_of_publication
 		isbn13
-		publisher {name}
+		publisher_name
 
 	    }
 	    
@@ -251,7 +251,7 @@ export const query = graphql`
 		list_price
 		year_of_publication
 		isbn13
-		publisher {name}
+		publisher_name
 
 	    }
 	}
