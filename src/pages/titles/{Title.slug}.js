@@ -105,7 +105,7 @@ const TitleTemplate = ({ data }) =>{
 		 <div className="flex flex-wrap">
 		     { doc.categories.map((c,index) => {
 			   return (
-			       <div className="relative top-0 grow md:w-1/2 lg:w-1/3 w-full bg-blue-100 h-64 bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ process.env.IMAGE_SERVER + c.image_url}}>
+			       <div className="relative top-0 grow md:w-1/2 lg:w-1/3 w-full bg-blue-100 h-64 bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ process.env.GATSBY_IMAGE_SERVER + c.image_url}}>
 				   
 				   <div className="absolute bottom-5 left-5 text-stone-100 font-subhed  text-2xl z-20">
 				       {c.name}
