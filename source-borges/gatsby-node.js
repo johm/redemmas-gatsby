@@ -302,17 +302,41 @@ exports.createResolvers = ({ createResolvers }) => {
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `
-    type Edition implements Node {
-id: ID,
-      key: Int,
-isbn13: String,
-publisher_name: String,
-year_of_publication: String,
-list_price: String,
-cover_image_url: String,
-opengraph_image_url: String
 
+    type Edition implements Node {
+      id: ID,
+      key: Int,
+      isbn13: String,
+      publisher_name: String,
+      year_of_publication: String,
+      list_price: String,
+      cover_image_url: String,
+      opengraph_image_url: String
     }
+
+type Title implements Node {
+id: ID
+}
+    type Category implements Node {
+id: ID
+}
+
+type Titlelist implements Node {
+id: ID
+}
+
+type Author implements Node {
+id: ID
+}
+
+type TitleTitle_lists implements Node {
+id: ID
+}
+
+type TitleContributionsAuthor implements Node {
+id: ID
+}
+
     `
     createTypes(typeDefs)
 }
