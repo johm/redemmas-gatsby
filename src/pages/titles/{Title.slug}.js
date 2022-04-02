@@ -12,25 +12,6 @@ import BookSearchForm from "../../components/BookSearchForm.js"
 
 
 
-export async function config() {
-  const { data } = graphql`
-    {
-      someTitles: allTitle(
-          filter: { updatedAt: { lt: "2023-10-31" } } 
-      ) {
-          nodes {
-              slug
-	  }
-      }
-    }
-  `
-  const someTitles = new Set(data.someTitles.nodes.map(n => n.slug))
-  return ({ params }) => {
-    return {
-      defer: someTitles.has(params.slug)
-    }
-  }
-}
 
 
 const TitleTemplate = ({ data }) =>{
