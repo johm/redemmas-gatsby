@@ -60,10 +60,10 @@ const client = new ApolloClient({
 
 //make publisherName not a method call so can be eager loaded
     const { data } = await client.query({
-	variables: { updated_at: updated_at },
+
 	query: 	gql`
-	    query GetBorges($updated_at: ISO8601DateTime) {
-		titles (updatedAt: $updated_at) {
+	    query GetBorges {
+		titles  {
 		    id
 		    key
 		    title
@@ -314,28 +314,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       opengraph_image_url: String
     }
 
-type Title implements Node {
-id: ID
-}
-    type Category implements Node {
-id: ID
-}
-
-type Titlelist implements Node {
-id: ID
-}
-
-type Author implements Node {
-id: ID
-}
-
-type TitleTitle_lists implements Node {
-id: ID
-}
-
-type TitleContributionsAuthor implements Node {
-id: ID
-}
 
     `
     createTypes(typeDefs)
