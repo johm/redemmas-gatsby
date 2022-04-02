@@ -29,7 +29,7 @@ const TitleTemplate = ({ data }) =>{
 	    <SEO title={doc.title} image={doc.latest_published_edition !== null && doc.latest_published_edition.opengraph_image_url} />	
 	    {doc.latest_published_edition !== null && 	
 	     <div className="flex flex-wrap">    
-		 <div className="sm:w-1/3 w-full mb-3">
+		 <div className="sm:w-1/3 lg:w-1/6 w-full mb-3">
 		     
 		     <img className="object-contain w-full object-right-top" src={'https://redemmas.org'+ doc.latest_published_edition.cover_image_url} />
 		     
