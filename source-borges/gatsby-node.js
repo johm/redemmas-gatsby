@@ -144,7 +144,7 @@ const client = new ApolloClient({
     
     Array.from(categoriesSet).forEach(category =>
 	{
-	console.log("Creating category " + category.name )
+//	console.log("Creating category " + category.name )
 	createNode({
 	    ...category,
 	    id: createNodeId(`${CATEGORY_NODE_TYPE}-${category.id}`),
@@ -172,7 +172,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(titlelist),
 	    },
 	})
-	    console.log("Created title_list " + titlelist.name )
+//	    console.log("Created title_list " + titlelist.name )
 	}
     )
 
@@ -190,7 +190,7 @@ const client = new ApolloClient({
 		contentDigest: createContentDigest(author),
 	    },
 	})
-	    console.log("Created author " + author.fullName)
+//	    console.log("Created author " + author.fullName)
 	}
     )
 
