@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import * as React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, navigate } from 'gatsby'
 
 import InnerLayout from "../components/InnerLayout.js"
 import Book from "../components/Book.js"
@@ -22,6 +22,17 @@ const BooksPage = () => {
 		data {
 		    body {raw}
 		    lists {slug}
+		}
+	    }
+	    
+	    allCategory {
+		edges {
+		    node {
+			id 
+			name
+			slug
+			image_url
+		    }
 		}
 	    }
 	    
@@ -48,6 +59,7 @@ const BooksPage = () => {
 				cover_image_url
 				list_price
 			    }
+			    
 			}
 		    }
 		}
@@ -95,6 +107,20 @@ const BooksPage = () => {
 		    </div>
 		    
 	    )})}
+
+	    <h2 className="font-subhed uppercase text-4xl  mt-6 mb-3 border-b border-yellow-700">Our sections</h2>
+	    <div className="flex flex-wrap">
+		{ booksData.allCategory.edges.map((c,index) => {
+		      return (
+			  <div onClick={() => navigate("/categories/"+c.node.slug) } className="relative top-0 grow md:w-1/2 lg:w-1/3 w-full bg-blue-100 h-64 bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ process.env.GATSBY_IMAGE_SERVER + c.node.image_url}}>
+			      
+			      <div className="absolute bottom-5 left-5 text-stone-100 font-subhed  text-2xl z-20">
+				  {c.node.name}
+			      </div>
+			      
+			  </div>
+		  )})}
+	    </div>
 	</InnerLayout>
 
     );

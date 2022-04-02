@@ -19,7 +19,7 @@ const CategoryTemplate = ({ data }) => {
 	    </div>
 
 	    <div className="grid grid-cols-3 gap-8 mt-12 auto-rows-fr">
-		{doc.titles.map((t,index) => {
+		{doc.titles.slice().reverse().map((t,index) => {
 		    return (
 			<Book title={t} edition={t.latest_published_edition} />
 		)})}
@@ -51,10 +51,11 @@ export const query = graphql`
 		latest_published_edition {
 		    id
 		    cover_image_url
+		    list_price
 		}
 	    }
-}
-}
+	}
+    }
 `
 
 export default CategoryTemplate

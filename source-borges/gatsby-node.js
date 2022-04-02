@@ -56,14 +56,14 @@ const client = new ApolloClient({
     const titlelistsSet=new Set();
     
     const updated_at = await cache.get(`timestamped`)
-
+    
 
 //make publisherName not a method call so can be eager loaded
     const { data } = await client.query({
-
-	query: 		   gql`
-	    query GetBorges {
-		titles  {
+	variables: { updated_at: updated_at },
+	query: 	gql`
+	    query GetBorges($updated_at: ISO8601DateTime) {
+		titles (updatedAt: $updated_at) {
 		    id
 		    key
 		    title
@@ -80,7 +80,7 @@ const client = new ApolloClient({
 			year_of_publication
 			publisher_name
 		    }
-		 		    
+		    
 		    contributions {
 			author {
 			    id 
