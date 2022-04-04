@@ -10,7 +10,7 @@ import Markdown from "markdown-to-jsx"
 
 
 const EventTemplate = ({ data }) =>{
-    if (!data) return null
+    if (!data || !data.airtable) return null
     const doc = data.airtable.data
     
     return (
