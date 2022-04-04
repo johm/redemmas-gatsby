@@ -10,7 +10,7 @@ const Book = ({title,edition}) => (
     {edition !== null && 	
      <>
 	 <div className="w-1/2  pr-4">
-	     <Link to={"/titles/"+title.slug}> <img  className="hover:drop-shadow object-contain object-left-top" src={`${process.env.GATSBY_IMAGE_SERVER}/${edition.cover_image_url}`} /></Link>
+	     <Link to={"/titles/"+title.slug}> <img  className="w-full hover:drop-shadow object-contain object-left-top" src={`${process.env.GATSBY_IMAGE_SERVER}/${edition.cover_image_url}`} /></Link>
 	 </div>
 	 
 	 <div className="w-1/2" >

@@ -71,8 +71,7 @@ module.exports = {
         {
             baseId: `appOaw16vByTK29YK`,
             tableName: `Events`,
-	    mapping: { Image: `fileNode` },
-
+	    mapping: { Image: `fileNode`}
 	},
       ]
     }

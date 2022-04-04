@@ -74,8 +74,8 @@ const BooksPage = () => {
     return (
 	<InnerLayout>
 	    <div className="mb-6 text-6xl font-text text-stone-900 border-b border-yellow-700">The Bookstore</div>
-	    <div className="flex mb-6  ">
-		<div className="w-full md:w-1/2 font-text text-2xl">
+	    <div className="flex flex-wrap mb-6  ">
+		<div className="w-full md:w-1/2 font-text text-2xl mb-6">
 
 		    <PrismicRichText field={booksData.prismicBookstoreIntro.data.body.raw}
 				     components={{
@@ -109,10 +109,10 @@ const BooksPage = () => {
 	    )})}
 
 	    <h2 className="font-subhed uppercase text-4xl  mt-6 mb-3 border-b border-yellow-700">Our sections</h2>
-	    <div className="flex flex-wrap">
+	    <div className="-z-50 flex flex-wrap">
 		{ booksData.allCategory.edges.map((c,index) => {
 		      return (
-			  <div onClick={() => navigate("/categories/"+c.node.slug) } className="relative top-0 grow md:w-1/2 lg:w-1/3 w-full bg-blue-100 h-64 bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ process.env.GATSBY_IMAGE_SERVER + c.node.image_url}}>
+			  <div onClick={() => navigate("/categories/"+c.node.slug) } className="relative top-0 grow md:w-1/2 lg:w-1/3 w-full bg-blue-100 h-64  bg-cover hover:shadow-yellow-700 hover:shadow-inner transition-shadow" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ process.env.GATSBY_IMAGE_SERVER + c.node.image_url}}>
 			      
 			      <div className="absolute bottom-5 left-5 text-stone-100 font-subhed  text-2xl z-20">
 				  {c.node.name}

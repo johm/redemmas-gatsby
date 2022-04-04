@@ -29,8 +29,8 @@ const Footer = () => {
 	<>
 	    {footer.data.chunks.map((chunk, index) => {
 		return(
-		    <div className="w-1/3 ">
-			<h2 className="font-subhed uppercase text-2xl border-b-2  border-yellow-900 mr-20">{chunk.title.text}</h2>
+		    <div className="w-full md:w-1/3 mb-6">
+			<h2 className="font-subhed uppercase w-[90%] text-2xl border-b-2  border-yellow-900 mr-20">{chunk.title.text}</h2>
 			<div className="font-subhed mt-3">
 			    <PrismicRichText field={chunk.description.raw}
 					     components={{

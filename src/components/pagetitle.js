@@ -22,9 +22,9 @@ class PageTitle extends React.Component {
 
     render (){
 	return (
-    	    <div id="indextitle" className="transition-colors text-stone-900 ease-in duration-500  flex absolute top-0 pl-2 items-center gap-2 w-screen h-16 ">
+    	    <div id="indextitle" className="z-40 transition-colors text-stone-900 ease-in duration-500  flex absolute top-0 pl-2 items-center gap-2 w-screen h-16 ">
 		<a href="/"><Logo /></a>
-		    <h1 className="font-text text-3xl flex-1" >
+		    <h1 className="font-text text-2xl md:text-3xl flex-1" >
 			<a href="/">Red Emma&#8217;s</a> </h1>
 	    </div>
 	)

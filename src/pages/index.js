@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import * as React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery,navigate } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import SEO from "../components/seo"
@@ -76,14 +76,14 @@ const IndexPage = () => {
 	    <div className="flex flex-wrap w-full">
 		{homepage.image_blocks.map((image_block, index) => {
 		    return (
-			<div className="relative top-0 sm:w-1/2 w-full bg-blue-100 h-50vw bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ image_block.image.url}}>
+			<div  onClick={() => navigate(image_block.link.url) } className="relative top-0 sm:w-1/2 w-full bg-blue-100 h-50vw bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ image_block.image.url}}>
 			    
 			    <div className="absolute bottom-5 left-5 text-stone-100 font-subhed  text-6xl z-20">
 				{image_block.title.text}
 			    </div>
 			    <div className="absolute bottom-5 right-5 border-t-4 border-yellow-700 w-1/2 h-6 z-10" />
-				
-			    </div>
+			    
+			</div>
 		    )
 		})
 		}

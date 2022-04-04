@@ -79,6 +79,7 @@ const client = new ApolloClient({
 			isbn13
 			year_of_publication
 			publisher_name
+			format
 		    }
 		    
 		    contributions {
@@ -308,6 +309,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       key: Int,
       isbn13: String,
       publisher_name: String,
+      format: String,
       year_of_publication: String,
       list_price: String,
       cover_image_url: String,

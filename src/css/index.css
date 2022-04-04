@@ -19,3 +19,15 @@ div#theFooter .block-img {
     @apply float-left;
 }
 
+
+p {@apply mb-3;}
+
+strong {@apply font-bold; }
+
+iframe {@apply w-full; @apply h-[50vh]; }
+
+ul {@apply list-disc;}
+ol {@apply list-decimal;}
+
+.exthtml a {@apply text-yellow-900;@apply hover:underline;}
+
