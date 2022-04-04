@@ -304,6 +304,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `
 
+type Title implements Node {
+editions: [Edition]
+}
+
     type Edition implements Node {
       id: ID,
       key: Int,
