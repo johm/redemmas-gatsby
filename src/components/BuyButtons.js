@@ -44,7 +44,7 @@ const BuyButtons = ({title,edition}) => {
 	}
 	</>
     )
-}
+	}
 
 export default BuyButtons
 

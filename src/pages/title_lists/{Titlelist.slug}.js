@@ -56,6 +56,9 @@ export const query = graphql`
 		latest_published_edition {
 		    id
 		    cover_image_url
+		    list_price
+		    key
+		    isbn13
 		}
 	    }
 }
