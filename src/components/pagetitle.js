@@ -14,7 +14,8 @@ class PageTitle extends React.Component {
 	    headerEl.classList.remove("absolute");
 	    headerEl.classList.add("fixed");
 	    headerEl.classList.add("top-0");
-	    headerEl.classList.remove("text-stone-900");
+	    headerEl.classList.remove("md:text-stone-900");
+	    headerEl.classList.remove("md:bg-white");
 	    headerEl.classList.add("text-stone-100");
 	    headerEl.classList.add("bg-stone-900");
 	} 
@@ -22,7 +23,7 @@ class PageTitle extends React.Component {
 
     render (){
 	return (
-    	    <div id="indextitle" className="z-40 transition-colors text-stone-900 ease-in duration-500  flex absolute top-0 pl-2 items-center gap-2 w-screen h-16 ">
+    	    <div id="indextitle" className="z-40 transition-colors bg-stone-900 md:bg-white text-stone-100 md:text-stone-900 ease-in duration-500  flex absolute top-0 pl-2 items-center gap-2 w-screen h-16 ">
 		<a href="/"><Logo /></a>
 		    <h1 className="font-text text-2xl md:text-3xl flex-1" >
 			<a href="/">Red Emma&#8217;s</a> </h1>

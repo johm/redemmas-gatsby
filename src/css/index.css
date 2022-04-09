@@ -6,13 +6,40 @@
 body {overscroll-behavior:none}
 
 
-.snipcart .snipcart__font--std {
-    @apply font-subhed;
+
+#snipcart .snipcart__font--secondary {
+    @apply font-text;
+    @apply text-stone-900;
+    @apply leading-3;
+    font-weight:normal;
     @apply text-lg;
-    
 }
 
+.snipcart__font--tiny {
+    @apply font-subhed;
+    @apply uppercase;
+        @apply text-stone-900;
+}
 
+.snipcart .snipcart-modal {
+    @apply pt-16;
+}
+
+#snipcart .snipcart-cart-button--highlight {
+    background-image:none;
+    @apply bg-yellow-900;
+    @apply rounded-full;
+    @apply text-stone-100;
+    @apply uppercase;
+    @apply font-subhed;
+}
+
+.snipcart .snipcart-cart-button__icon {display:none;}
+
+
+.snipcart .snipcart__actions--link{
+    @apply text-yellow-900;
+}
     
 div#theFooter .block-img {
     @apply w-1/4;
@@ -20,14 +47,16 @@ div#theFooter .block-img {
 }
 
 
-p {@apply mb-3;}
+.exthtml p {@apply mb-3;}
 
-strong {@apply font-bold; }
+.exthtml strong {@apply font-bold; }
 
-iframe {@apply w-full; @apply h-[50vh]; }
+.exthtml iframe {@apply w-full; @apply h-[50vh]; }
 
-ul {@apply list-disc;}
-ol {@apply list-decimal;}
+.exthtml ul {@apply list-disc;}
+.exthtml ol {@apply list-decimal;}
 
 .exthtml a {@apply text-yellow-900;@apply hover:underline;}
+
+
 

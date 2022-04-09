@@ -61,7 +61,7 @@ const SearchPage = ({location}) => {
 
 
 
-	    <div className="grid md:grid-cols-2 lg:grid-cols-4  gap-8 mt-12 auto-rows-fr">
+	    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 mt-12 auto-rows-fr">
 		{resultData.results.map ((result,index) => {
 		    return (
 			<Book title={result.the_title} edition={result.the_edition} />
