@@ -12,7 +12,7 @@ const Layout = ({ children }) => (
     <div
     hidden
     id="snipcart"
-    data-api-key={process.env.SNIPCART_API_KEY}
+    data-api-key={process.env.GATSBY_SNIPCART_API_KEY}
     data-config-modal-style="side"
     ></div>
     <SEO />
