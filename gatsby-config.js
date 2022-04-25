@@ -22,12 +22,19 @@ module.exports = {
 	{resolve: `./source-borges`,
 	 options: {inventoryServer: process.env.GATSBY_INVENTORY_SERVER},
 	},
-    {
 
-	
+	{
+	    resolve: 'gatsby-plugin-manifest',
+	    options: {
+		icon: 'src/images/logo.png',
+	    },
+	},
+	{
 
-	resolve: `gatsby-plugin-snipcart-advanced`,
-	options: {
+	    
+
+	    resolve: `gatsby-plugin-snipcart-advanced`,
+	    options: {
 		version: "3.0.29",
 		publicApiKey: process.env.GATSBY_SNIPCART_API_KEY, // use public api key here or in environment variable
 		useSideCart: true,

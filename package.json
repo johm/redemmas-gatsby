@@ -27,6 +27,7 @@
     "gatsby-image": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-image": "latest",
+    "gatsby-plugin-manifest": "^4.12.1",
     "gatsby-plugin-postcss": "^5.4.0",
     "gatsby-plugin-react-helmet": "latest",
     "gatsby-plugin-sharp": "latest",

@@ -62,7 +62,7 @@ div#theFooter .block-img {
     background-color:transparent;
     @apply text-stone-100;
     @apply w-[90%];
-    @apply border;
+    @apply border-b;
     @apply p-1;
     @apply focus:outline-none;
 }

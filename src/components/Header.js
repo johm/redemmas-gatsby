@@ -73,8 +73,8 @@ const Header = () => {
 		<ul className="font-bold font-subhed uppercase">
 		    {mainMenu.data.menu_links.map((menuLink, index) => {
 			return(
-			    <li>
-				<a href={menuLink.url.url}>
+			    <li className="mb-3">
+				<a className="hover:text-yellow-700" href={menuLink.url.url}>
 				    {menuLink.title.text}
 				</a>
 			    </li>
