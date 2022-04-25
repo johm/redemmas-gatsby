@@ -48,7 +48,7 @@ const Header = () => {
 			<SnipcartItems />
 		    </button>
 
-		    <div className="flex-none md:pt-2">
+		    <div className="flex-none md:pt-2 z-20">
 			<button class="outline-none menu-button" onClick={() => setToggle(!toggle)}>
 			    <svg
 				class="w-5 md:w-6 ml-1 md:pt-1 text-yellow-700 hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"

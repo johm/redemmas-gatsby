@@ -1,13 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import * as React from "react"
-import { graphql, useStaticQuery,navigate } from 'gatsby'
+import { graphql, useStaticQuery,navigate,Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import SEO from "../components/seo"
 //import Layout from '../components/Layout'
 import Logo from '../components/logo'
-
+import moment from 'moment'
+import ShortEvent from "../components/ShortEvent"
 
 
 
@@ -59,6 +60,36 @@ const IndexPage = () => {
 		    }
 		}
 	    }
+	    allAirtable(
+		sort: { fields: [data___Date_and_time], order: ASC }
+		filter: {
+		    table: { eq: "Events" }
+		    data: {Status: {eq: "Published"}}
+		}
+	    ) {
+		edges {
+		    node {
+			data {
+			    Name
+			    Slug
+			    Date_and_time
+			    Location
+			    Short_Description
+			    Author_bio
+			    Withfriends_url
+			    Image {
+				localFiles {
+				    childImageSharp {
+					gatsbyImageData( placeholder: TRACED_SVG, layout: CONSTRAINED)
+					
+				    }	
+				}
+			    }
+			}
+		    }
+		}
+	    }
+	    
 	}
     `)
 
@@ -67,7 +98,7 @@ const IndexPage = () => {
     return (
 	<div>
 	    <SEO />	
-	    <div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/test-bg2.jpg')]">
+	    <div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/test-bg.webp')]">
 	    </div>
 	    <IndexTitle />
 	    <div className="bg-stone-50 p-8 z-30  font-text">
@@ -87,6 +118,20 @@ const IndexPage = () => {
 		    )
 		})
 		}
+	    </div>
+
+	    <div className="p-6">
+		<h1 className="text-2xl md:text-4xl mb-6 font-text text-stone-900 border-b border-yellow-700"><Link to="/events">Coming up soon</Link></h1>
+		<div class="md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 auto-rows-fr">
+		    {homepageData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > Date.now()).slice(0,3).map((e,index) => {
+			return (
+
+			    <ShortEvent event={e.node.data} />
+			    
+			    
+		    )})}
+		</div>
+		<Link className="text-center rounded-full bg-yellow-900 text-stone-100 block px-3 py-2 uppercase font-subhed hover:bg-stone-800 transition-colors md:mx-40 lg:mx-72 text-xl" to="/events">See all upcoming events</Link>
 	    </div>
 	</div>
 	

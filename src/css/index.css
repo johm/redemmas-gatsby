@@ -7,18 +7,22 @@ body {overscroll-behavior:none}
 
 
 
-#snipcart .snipcart__font--secondary {
-    @apply font-text;
+#snipcart .snipcart__font--secondary, #snipcart .snipcart__actions--link {
+    @apply font-subhed;
     @apply text-stone-900;
     @apply leading-3;
     font-weight:normal;
     @apply text-lg;
 }
 
-.snipcart__font--tiny {
+.snipcart .snipcart__font--bold {
     @apply font-subhed;
     @apply uppercase;
-        @apply text-stone-900;
+}
+
+
+.snipcart .snipcart__font--std, .snipcart .snipcart-form__label, .snipcart .snipcart-shipping-address__subtitle, .snipcart .snipcart__font--subtitle, .snipcart .snipcart__actions--link {
+   @apply font-subhed;
 }
 
 .snipcart .snipcart-modal {
@@ -40,10 +44,51 @@ body {overscroll-behavior:none}
 .snipcart .snipcart__actions--link{
     @apply text-yellow-900;
 }
-    
+
+.snipcart .snipcart__font--tiny, .snipcart .snipcart__font--slim {
+    @apply text-xs;
+    @apply uppercase;
+    @apply font-subhed;
+}
+
 div#theFooter .block-img {
     @apply w-1/4;
     @apply float-left;
+    @apply pr-8;
+
+}
+
+.mailchimp input {
+    background-color:transparent;
+    @apply text-stone-100;
+    @apply w-[90%];
+    @apply border;
+    @apply p-1;
+    @apply focus:outline-none;
+}
+
+.mailchimp button {
+    display:block;
+    @apply p-1;
+    @apply mt-2;
+    @apply border-yellow-900;
+    @apply border;
+    @apply hover:bg-yellow-600;
+}
+
+
+div#theFooter .block-img img{
+    @apply hover:border-b-2;
+    @apply pb-4;
+}
+
+div#theFooter a {
+    @apply underline;
+    @apply decoration-yellow-900;
+    @apply decoration-dashed;
+    @apply decoration-2;
+    @apply underline-offset-2;
+    @apply hover:text-yellow-600;
 }
 
 
@@ -57,6 +102,43 @@ div#theFooter .block-img {
 .exthtml ol {@apply list-decimal;}
 
 .exthtml a {@apply text-yellow-900;@apply hover:underline;}
+
+
+.exthtml h1 {
+    @apply text-2xl;
+    @apply md:text-4xl;
+    @apply 	   mb-6;
+    @apply 	   font-text;
+    @apply 	   text-stone-900;
+    @apply 	   border-b;
+    @apply 	   border-yellow-700;	     
+	    }
+
+
+.exthtml h2 {
+    @apply text-xl;
+    @apply md:text-3xl;
+    @apply 	   mb-6;
+    @apply 	   font-text;
+    @apply 	   text-stone-900;
+    @apply 	   border-b;
+    @apply 	   border-yellow-700;	     
+	    }
+
+
+.exthtml h3 {
+    @apply md:text-2xl;
+    @apply 	   mb-6;
+    @apply 	   font-text;
+    @apply 	   text-stone-900;
+	    }
+
+.exthtml h3 {
+    @apply md:text-xl;
+    @apply 	   mb-6;
+    @apply 	   font-text;
+    @apply 	   text-stone-900;
+	    }
 
 
 

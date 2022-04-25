@@ -5,10 +5,9 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 
 
 import SEO from "../components/seo"
-import Event from "../components/Event"
 import InnerLayout from "../components/InnerLayout.js"
 import moment from 'moment'
-
+import Event from "../components/Event"
 
 
 
