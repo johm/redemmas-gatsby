@@ -5,14 +5,14 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-      siteUrl: "https://www.yourdomain.tld",
-      title: "redemmas-gatsby",
+      siteUrl: "https://www.redemmas.org",
+      title: "Red Emma's",
       titleTemplate: " -- %s --",
-      description: "Description goes here",
+      description: "We are a worker cooperative radical bookstore, cafe, and community events space in Baltimore.",
       url: "https://redemmas.org",
       image: "TK",
       twitterUsername: "@redemmas",
-	  
+      
   },
     
     plugins: [
