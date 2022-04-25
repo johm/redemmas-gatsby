@@ -31,7 +31,7 @@ const TitleTemplate = ({ data }) =>{
 	 <div className="flex flex-wrap">    
 	     <div className="sm:w-1/3 lg:w-1/6 w-full mb-3">
 		 
-		 <img className="object-contain w-full object-right-top" src={'https://redemmas.org'+ doc.latest_published_edition.cover_image_url} />
+		 <img className="object-contain w-full object-right-top" src={`${process.env.GATSBY_IMAGE_SERVER}/${doc.latest_published_edition.cover_image_url}`} />
 		 
 		 
 	     </div>
@@ -57,9 +57,9 @@ const TitleTemplate = ({ data }) =>{
 	}    
 	{ other_editions.length > 0 && 
 	  <div className="mt-6">
-	      <h2 className="font-subhed uppercase text-2xl border-b">Other editions</h2>
-	      <div className="grid sm:grid-cols-3 gap-8 mt-12 auto-rows-fr">
-		  {other_editions.map((e,index) => {
+	    <h2 className="font-subhed uppercase text-2xl border-b">Other editions</h2>
+	    <div className="grid sm:grid-cols-3 gap-8 mt-12 auto-rows-fr">
+	    {other_editions.map((e,index) => {
 		      return (
 			  <div className="flex flex-wrap mb-6 "> 
 			      {e !== null && 	
