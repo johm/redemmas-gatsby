@@ -15,7 +15,7 @@ const CategoryTemplate = ({ data }) => {
 	<InnerLayout>
 	    <div>
 		<h1 className="font-text text-6xl" >{doc.name}</h1>
-		make this a banner with the category image and a gradient and white text
+
 	    </div>
 
 	    <div className="grid grid-cols-3 gap-8 mt-12 auto-rows-fr">
@@ -52,6 +52,7 @@ export const query = graphql`
 		    id
 		    cover_image_url
 		    list_price
+		    isbn13
 		}
 	    }
 	}

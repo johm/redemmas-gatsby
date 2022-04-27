@@ -58,6 +58,7 @@ const BooksPage = () => {
 				key
 				cover_image_url
 				list_price
+				isbn13
 			    }
 			    
 			}

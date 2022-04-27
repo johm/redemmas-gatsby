@@ -17,7 +17,7 @@ const EventTemplate = ({ data }) =>{
 	
 	<InnerLayout>
 	
-	<SEO title={doc.name} image={getSrc(doc.Image)} />	
+	<SEO title={doc.Name} description="RSVP now for this event at Red Emma's" image={doc.Image && doc.Image.localFiles[0] && doc.Image.localFiles[0].childImageSharp &&  doc.Image.localFiles[0].childImageSharp.original && `https://redemmas.org/${doc.Image.localFiles[0].childImageSharp.original.src}`} />	
 	
 	<div className="mb-6 xl:mr-48 xl:ml-48"  >
 	<GatsbyImage
@@ -84,6 +84,7 @@ export const query = graphql`
 		    localFiles {
 			childImageSharp {
 			    gatsbyImageData( placeholder: TRACED_SVG, layout: CONSTRAINED)
+			    original {src}
 			}
 		    }
 		}

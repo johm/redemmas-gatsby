@@ -20,7 +20,7 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    image: `${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
   }
 
@@ -28,9 +28,9 @@ const SEO = ({ title, description, image, article }) => {
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-<link rel="preconnect" href="https://app.snipcart.com" />
-	  <link rel="preconnect" href="https://cdn.snipcart.com" />
-	  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+      <link rel="preconnect" href="https://app.snipcart.com" />
+      <link rel="preconnect" href="https://cdn.snipcart.com" />
+      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 
