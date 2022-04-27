@@ -19,6 +19,10 @@ module.exports = {
 	{
 	    resolve: `gatsby-plugin-theme-ui`,
 	},
+	{
+	    resolve: `gatsby-plugin-gatsby-cloud`,
+	},
+
 	{resolve: `./source-borges`,
 	 options: {inventoryServer: process.env.GATSBY_INVENTORY_SERVER},
 	},

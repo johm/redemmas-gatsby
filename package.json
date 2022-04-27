@@ -25,6 +25,7 @@
     "autoprefixer": "^10.4.0",
     "gatsby": "^4.2.0",
     "gatsby-image": "latest",
+    "gatsby-plugin-gatsby-cloud": "^4.13.0",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-image": "latest",
     "gatsby-plugin-manifest": "^4.12.1",
