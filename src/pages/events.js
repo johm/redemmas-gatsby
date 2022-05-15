@@ -56,9 +56,8 @@ const EventsPage = () => {
 		{eventsData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > Date.now()).map((e,index) => {
 		    return (
 			<div className="">
-			    <Event event={e.node.data} />
+			    <Event e={e.node.data} />
 			</div>
-			
 		)})}
 	    </div>
 	</InnerLayout>

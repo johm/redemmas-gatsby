@@ -24,6 +24,7 @@
     "@theme-ui/typography": "^0.11.1",
     "autoprefixer": "^10.4.0",
     "gatsby": "^4.2.0",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-image": "latest",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
     "gatsby-plugin-google-analytics": "latest",
