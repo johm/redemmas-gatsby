@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 const ShortEvent = ({e}) => (
 
-    <div className=" mb-6 relative"> 
+    <div className=" mb-6 relative" key={e.Slug}> 
 	
 	<Link to={"/events/"+e.Slug}>
 	    <GatsbyImage

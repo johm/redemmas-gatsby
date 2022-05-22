@@ -53,6 +53,7 @@ export const query = graphql`
 		    cover_image_url
 		    list_price
 		    isbn13
+                    key
 		}
 	    }
 	}

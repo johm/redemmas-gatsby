@@ -135,7 +135,7 @@ const IndexPage = () => {
 	    <div class="md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 auto-rows-fr">
 		{homepageData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > Date.now()).slice(0,3).map((e,index) => {
 		    return (
-
+			
 			<ShortEvent e={e.node.data} />
 			
 			
