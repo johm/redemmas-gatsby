@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import * as React from "react"
+import React, {useState,useEffect} from "react"
 import { graphql, useStaticQuery,navigate,Link } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -46,6 +46,12 @@ class IndexTitle extends React.Component {
 
 const IndexPage = () => {
 
+    const [nowtime, setNowtime] = useState(Date.now())
+    useEffect(() => {
+	setNowtime(Date.now())
+    },[])
+    
+    
     const homepageData = useStaticQuery(graphql`
 	{
 	    prismicHomePage {
@@ -133,7 +139,7 @@ const IndexPage = () => {
 	<div className="p-6">
 	    <h1 className="text-2xl md:text-4xl mb-6 font-text text-stone-900 border-b border-yellow-700"><Link to="/events">Coming up soon</Link></h1>
 	    <div class="md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 auto-rows-fr">
-		{homepageData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > Date.now()).slice(0,3).map((e,index) => {
+		{homepageData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > nowtime).slice(0,3).map((e,index) => {
 		    return (
 			
 			<ShortEvent e={e.node.data} />
