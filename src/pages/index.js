@@ -76,7 +76,9 @@ const IndexPage = () => {
 		sort: { fields: [data___Date_and_time], order: ASC }
 		filter: {
 		    table: { eq: "Events" }
-		    data: {Status: {eq: "Published"}}
+		    data: {
+			Status: {eq: "Published"}
+			Upcoming: {eq: 1}}
 		}
 	    ) {
 		edges {
@@ -139,12 +141,9 @@ const IndexPage = () => {
 	<div className="p-6">
 	    <h1 className="text-2xl md:text-4xl mb-6 font-text text-stone-900 border-b border-yellow-700"><Link to="/events">Coming up soon</Link></h1>
 	    <div class="md:grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 auto-rows-fr">
-		{homepageData.allAirtable.edges.filter(edgeItem => parseInt(moment(edgeItem.node.data.Date_and_time).format("x")) > nowtime).slice(0,3).map((e,index) => {
+		{homepageData.allAirtable.edges.slice(0,3).map((e,index) => {
 		    return (
-			
 			<ShortEvent e={e.node.data} />
-			
-			
 		)})}
 	    </div>
 	    <Link className="text-center rounded-full bg-yellow-900 text-stone-100 block px-3 py-2 uppercase font-subhed hover:bg-stone-800 transition-colors md:mx-40 lg:mx-72 text-xl" to="/events">See all upcoming events</Link>
