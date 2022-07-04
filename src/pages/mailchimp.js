@@ -71,18 +71,20 @@ const Evs = ({eventsData})=>{
 	    {eventsData.allAirtable.edges.map((e,index) => {
 		const ev=e.node.data
 		return (
-		    <div key={ev.Slug}>
+		    <div key={ev.Slug} className="mcnTextContent">
+			<h3><a href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
 			<a href={"https://redemmas.org/events/"+ev.Slug}>
-			    <h3>{ev.Name}</h3>
-			    <img src={"https://redemmas.org"+ ev.Image.localFiles[0].publicURL} />
-			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</h4>
-			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
-			    <h4 className="">{ev.Location}</h4>
-			    {ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="">RSVP on withfriends</a>}
-
-			    <div className="font-text">{ev.Short_Description}</div>
-
+			    <img width="100%" src={"https://redemmas.org"+ ev.Image.localFiles[0].publicURL} />
 			</a>
+			
+			<h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</h4>
+			<h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
+			<h4 className="">{ev.Location}</h4>
+			
+			{ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="">RSVP on withfriends</a>}
+			
+			<div className="font-text">{ev.Short_Description}</div>
+		    	<hr />
 		    </div> 
 		)}
 					     )}
