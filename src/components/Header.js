@@ -74,8 +74,9 @@ const Header = () => {
 		    {mainMenu.data.menu_links.map((menuLink, index) => {
 			return(
 			    <li className="mb-3">
-				<a className="hover:text-yellow-700" href={menuLink.url.url}>
+				<a className="hover:text-yellow-700 text-xl" href={menuLink.url.url}>
 				    {menuLink.title.text}
+				    
 				</a>
 			    </li>
 			)

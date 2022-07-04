@@ -12,7 +12,7 @@ const Event = ({e}) => (
 	<Link to={"/events/"+e.Slug}>
 	    <GatsbyImage
 		image={
-		e.Image.localFiles[0].childImageSharp.gatsbyImageData
+		    e.Image.localFiles[0].childImageSharp.gatsbyImageData
 		}
 		alt={e.Name}
 	    />
