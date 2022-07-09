@@ -72,17 +72,19 @@ const Evs = ({eventsData})=>{
 		const ev=e.node.data
 		return (
 		    <div key={ev.Slug} className="mcnTextContent">
-			<h3><a href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
 			<a href={"https://redemmas.org/events/"+ev.Slug}>
 			    <img width="100%" src={"https://redemmas.org"+ ev.Image.localFiles[0].publicURL} />
 			</a>
-			
+			<br /><br />
+			<h3><a href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
+			<br />
 			<h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</h4>
 			<h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
 			<h4 className="">{ev.Location}</h4>
-			
-			{ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="">RSVP on withfriends</a>}
-			
+			<br />
+			{ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style="background-color:#4c1d95;color:#ffffff;padding:3px;padding-right:10px;padding-left:10px;border-radius:10px;" >RSVP on withfriends</a>}
+			<br /><br />
+
 			<div className="font-text">{ev.Short_Description}</div>
 		    	<hr />
 		    </div> 
