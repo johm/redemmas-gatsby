@@ -82,7 +82,12 @@ const Evs = ({eventsData})=>{
 			<h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
 			<h4 className="">{ev.Location}</h4>
 			<br />
-			{ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style="background-color:#4c1d95;color:#ffffff;padding:3px;padding-right:10px;padding-left:10px;border-radius:10px;" >RSVP on withfriends</a>}
+			{ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style={{background-color:"#4c1d95",
+												  color:"#ffffff",
+												  padding:"3px",
+												  paddingRight:"10px",
+												  paddingLeft:"10px",
+												  borderRadius:"10px"}} >RSVP on withfriends</a>}
 			<br /><br />
 
 			<div className="font-text">{ev.Short_Description}</div>
