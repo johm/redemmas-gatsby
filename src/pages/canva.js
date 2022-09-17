@@ -72,7 +72,7 @@ const Evs = ({eventsData})=>{
 		const ev=e.node.data
 		return (
 		    <div key={ev.Slug} className="mcnTextContent">
-			<h3>{moment(ev.Date_and_time).tz('America/New_York').format("dddd, MMMM Do")}, {moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}: {ev.Name}</h3>
+			<h3>{moment(ev.Date_and_time).tz('America/New_York').format("MMM D")}: {ev.Name}</h3>
 		    </div> 
 		)}
 					     )}
