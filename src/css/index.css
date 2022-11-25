@@ -52,7 +52,7 @@ body {overscroll-behavior:none}
 }
 
 div#theFooter .block-img {
-    @apply w-1/4;
+    @apply w-1/5;
     @apply float-left;
     @apply pr-8;
 
