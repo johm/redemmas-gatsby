@@ -59,7 +59,7 @@ const client = new ApolloClient({
     const updated_at = await cache.get(`timestamped`)
     
 
-//make publisherName not a method call so can be eager loaded
+
     const { data } = await client.query({
 
 	query: 	gql`
@@ -117,6 +117,8 @@ const client = new ApolloClient({
     
     
     // loop through data and create Gatsby nodes
+
+    console.time("Title loop")
     data.titles.forEach(title =>
 	{ createNode({
 	    ...title,
@@ -142,8 +144,9 @@ const client = new ApolloClient({
 	    )
 	}
     )
-    
-    
+    console.timeEnd("Title loop")
+
+    console.time("Category loop")
     Array.from(categoriesSet).forEach(category =>
 	{
 //	console.log("Creating category " + category.name )
@@ -160,7 +163,9 @@ const client = new ApolloClient({
 	})
 	}
     )
+    console.timeEnd("Category loop")
 
+    console.time("List loop")
     Array.from(titlelistsSet).forEach(titlelist =>
 	{
 	createNode({
@@ -177,8 +182,9 @@ const client = new ApolloClient({
 //	    console.log("Created title_list " + titlelist.name )
 	}
     )
+    console.timeEnd("List loop")
 
-    
+    console.time("Author loop")
     Array.from(authorsSet).filter(a => a !== null).forEach(author =>
 	{
 	createNode({
@@ -195,7 +201,7 @@ const client = new ApolloClient({
 //	    console.log("Created author " + author.fullName)
 	}
     )
-
+    console.timeEnd("Author loop")
     return
     
 }
@@ -298,7 +304,9 @@ exports.createResolvers = ({ createResolvers }) => {
 	    },
 	},   
     }
+    console.time("Create resolvers")
     createResolvers(resolvers)
+    console.timeEnd("Create resolvers")
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -323,7 +331,9 @@ editions: [Edition]
 
 
     `
+    console.time("Create types")
     createTypes(typeDefs)
+    console.timeEnd("Create types")
 }
 
 
