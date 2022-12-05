@@ -7,6 +7,7 @@ import InnerLayout from "../../components/InnerLayout.js"
 import Book from "../../components/Book.js"
 import Contributors from '../../components/contributors'
 import BuyButtons from '../../components/BuyButtons.js'
+import Description from '../../components/Description.js'
 import BookSearchForm from "../../components/BookSearchForm.js"
 
 
@@ -46,6 +47,10 @@ const TitleTemplate = ({ data }) =>{
 		     <div className=" mt-6 font-subhed text-xl">
 			 <div>${doc.latest_published_edition.list_price}</div>
 			 
+		     </div>
+
+		     <div className=" mt-6 font-text text-md exthtml">
+			 <Description title={doc} edition={doc.latest_published_edition}/>
 		     </div>
 		     
 		     <div className=" mt-6 ">
