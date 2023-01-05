@@ -89,7 +89,7 @@ const Evs = ({eventsData})=>{
 												  borderRadius:"10px"}} >RSVP on withfriends</a>}
 			<br /><br />
 		    	<hr />
-		    </div> 
+		    </div> {"\n"}
 		)}
 					     )}
 	</div>
