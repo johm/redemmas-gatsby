@@ -92,7 +92,7 @@ const Evs = ({eventsData})=>{
 
 			<div className="font-text">{ev.Short_Description}</div>
 		    	<hr />
-		    </div>{"\n"}{"\n"} 
+		    </div>
 		)}
 					     )}
 	</div>
