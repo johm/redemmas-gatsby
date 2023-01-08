@@ -66,10 +66,11 @@ const EventsPage = () => {
 const Evs = ({eventsData})=>{
 
     return (
-	<div>
+	<>
 	    {eventsData.allAirtable.edges.map((e,index) => {
 		const ev=e.node.data
 		return (
+		    <>
 		    <div key={ev.Slug} className="mcnTextContent">
 			<a href={"https://redemmas.org/events/"+ev.Slug}>
 			    <img width="100%" src={"https://redemmas.org"+ ev.Image.localFiles[0].publicURL} />
@@ -89,10 +90,13 @@ const Evs = ({eventsData})=>{
 												  borderRadius:"10px"}} >RSVP on withfriends</a>}
 			<br /><br />
 		    	<hr />
-		    </div> 
+		    </div>
+						{`\n\n`}
+</>
+
 		)}
 					     )}
-	</div>
+	</>
     )};
 
 
