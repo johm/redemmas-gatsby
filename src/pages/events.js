@@ -28,6 +28,7 @@ const EventsPage = () => {
 		    data: {
 			Status: {eq: "Published"}
 			Upcoming: {eq: 1}
+			WBFOnly: {ne: true}
 }
 		}
 	    ) {

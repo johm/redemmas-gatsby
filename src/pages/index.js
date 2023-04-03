@@ -78,7 +78,10 @@ const IndexPage = () => {
 		    table: { eq: "Events" }
 		    data: {
 			Status: {eq: "Published"}
-			Upcoming: {eq: 1}}
+			Upcoming: {eq: 1}
+			WBFOnly: {ne: true}
+}
+
 		}
 	    ) {
 		edges {
