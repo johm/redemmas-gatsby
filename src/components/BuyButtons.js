@@ -17,7 +17,8 @@ const BuyButtons = ({title,edition}) => {
 
     return (
 	<>
-	{ (instock !== "UNAVAILABLE") && 
+
+	{ (instock !== "UNAVAILABLE" && instock !== "OUT OF PRINT") && 
 	      <button className="w-full snipcart-add-item rounded-full bg-red-400 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors duration-500"
 		      data-item-id={edition.key}
 		      data-item-price={edition.list_price}
@@ -30,8 +31,8 @@ const BuyButtons = ({title,edition}) => {
 		  {instock === "PREORDER" &&  <>Preorder</>}
 		  {(instock !== "PREORDER" && instock !== "IN STOCK") &&  <>Backorder</>}
 	      </button>
-	    }
-	    { (instock === "UNAVAILABLE") &&
+	}
+	{ (instock === "UNAVAILABLE" || instock === "OUT OF PRINT") &&
 	      <button className="w-full rounded-full bg-stone-400 text-stone-100 font-subhed px-3 py-0.5 uppercase">
 		  Unavailable
 	      </button>
