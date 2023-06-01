@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql, navigate,Link } from 'gatsby'
 import { getSrc } from "gatsby-plugin-image"
-import moment from 'moment'
+import moment from 'moment-timezone'
 import { GatsbyImage} from "gatsby-plugin-image";
 
 import SEO from '../../components/seo.js'
@@ -30,8 +30,8 @@ const EventTemplate = ({ data }) =>{
 	<h2 className="text-3xl md:text-4xl mb-3 font-text leading-tight text-stone-900">{doc.Name}</h2>
 	<div className="flex flex-wrap mb-6">
 	<div className="w-full md:w-1/2 font-subhed uppercase text-xl">
-	<div>{moment(doc.Date_and_time).format("dddd, MMMM Do YYYY")}</div>
-	<div>{moment(doc.Date_and_time).format("h:mm a")}</div>
+	<div>{moment(doc.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</div>
+	<div>{moment(doc.Date_and_time).tz('America/New_York').format("h:mm a")}</div>
 	<div>{doc.Location}</div>
 	</div>
 	<div className="w-full md:w-1/2">
