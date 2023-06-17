@@ -17,8 +17,8 @@ const Event = ({e}) => (
 		alt={e.Name}
 	    />
 	</Link>
-	     
-	<a href={"/events/"+e.Slug}><h2 className="text-2xl md:text-3xl mb-3 font-text leading-tight text-stone-900">{e.Name}</h2></a>
+	    
+	<a href={"/events/"+e.Slug}><h2 className="text-2xl mb-3 font-text leading-tight text-stone-900">{e.Name}</h2></a>
 	<div className="font-subhed uppercase">{moment(e.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</div>
 	<div className="font-subhed uppercase">{moment(e.Date_and_time).tz('America/New_York').format("h:mm a")}</div>
 	<div className="font-subhed uppercase">{e.Location}</div>

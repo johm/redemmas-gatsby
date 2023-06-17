@@ -23,43 +23,33 @@ const WaverlyBookFestival2023Page = () => {
     },[])
 
     
-    const eventsData = useStaticQuery(graphql`
-	{
-	    allAirtable(
-		sort: { fields: [data___Date_and_time], order: ASC }
-		filter: {
-		    table: { eq: "Events" }
-		    data: {
-			Status: {eq: "Published"}
-Waverly: {eq: 1}
-Upcoming: {eq: 1}
-}
-		}
-	    ) {
-		edges {
-		    node {
-			data {
-			    Name
-			    Slug
-			    Date_and_time
-			    Location
-			    Short_Description
-			    Author_bio
-			    Withfriends_url
-			    Image {
-				localFiles {
-				    childImageSharp {
-					gatsbyImageData( placeholder: TRACED_SVG, layout: CONSTRAINED)
-					
-				    }	
-				}
-			    }
-			}
-		    }
-		}
-	    }
-	}
-    `)
+    const eventsData = useStaticQuery(graphql`{
+  allAirtable(
+    sort: {data: {Date_and_time: ASC}}
+    filter: {table: {eq: "Events"}, data: {Status: {eq: "Published"}, Waverly: {eq: 1}, Upcoming: {eq: 1}}}
+  ) {
+    edges {
+      node {
+        data {
+          Name
+          Slug
+          Date_and_time
+          Location
+          Short_Description
+          Author_bio
+          Withfriends_url
+          Image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`)
 
 
 

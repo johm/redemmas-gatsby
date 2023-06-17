@@ -15,40 +15,31 @@ import Event from "../components/Event"
 const EventsPage = () => {
 
     
-    const eventsData = useStaticQuery(graphql`
-	{
-	    allAirtable(
-		sort: { fields: [data___Date_and_time], order: ASC }
-		filter: {
-		    table: { eq: "Events" }
-		    data: {
-			Status: {eq: "Published"}
-			Upcoming: {eq: 1}
-			WBFOnly: {ne: true}
-}
-		}
-	    ) {
-		edges {
-		    node {
-			data {
-			    Name
-			    Slug
-			    Date_and_time
-			    Location
-			    Short_Description
-			    Author_bio
-			    Withfriends_url
-			    Image {
-				localFiles {
-				    publicURL
-				}
-			    }
-			}
-		    }
-		}
-	    }
-	}
-    `)
+    const eventsData = useStaticQuery(graphql`{
+  allAirtable(
+    sort: {data: {Date_and_time: ASC}}
+    filter: {table: {eq: "Events"}, data: {Status: {eq: "Published"}, Upcoming: {eq: 1}, WBFOnly: {ne: true}}}
+  ) {
+    edges {
+      node {
+        data {
+          Name
+          Slug
+          Date_and_time
+          Location
+          Short_Description
+          Author_bio
+          Withfriends_url
+          Image {
+            localFiles {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+}`)
 
     
     return (

@@ -52,63 +52,53 @@ const IndexPage = () => {
     },[])
     
     
-    const homepageData = useStaticQuery(graphql`
-	{
-	    prismicHomePage {
-		data {
-		    about {
-			text
-			raw}
-		    image_blocks {
-			link {
-			    url
-			}
-			title {text}
-			image { 
-			    url
-			    gatsbyImageData
-			}
-			
-		    }
-		}
-	    }
-	    allAirtable(
-		sort: { fields: [data___Date_and_time], order: ASC }
-		filter: {
-		    table: { eq: "Events" }
-		    data: {
-			Status: {eq: "Published"}
-			Upcoming: {eq: 1}
-			WBFOnly: {ne: true}
-}
-
-		}
-	    ) {
-		edges {
-		    node {
-			data {
-			    Name
-			    Slug
-			    Date_and_time
-			    Location
-			    Short_Description
-			    Author_bio
-			    Withfriends_url
-			    Image {
-				localFiles {
-				    childImageSharp {
-					gatsbyImageData( placeholder: TRACED_SVG, layout: CONSTRAINED)
-					
-				    }	
-				}
-			    }
-			}
-		    }
-		}
-	    }
-	    
-	}
-    `)
+    const homepageData = useStaticQuery(graphql`{
+  prismicHomePage {
+    data {
+      about {
+        text
+        raw
+      }
+      image_blocks {
+        link {
+          url
+        }
+        title {
+          text
+        }
+        image {
+          url
+          gatsbyImageData
+        }
+      }
+    }
+  }
+  allAirtable(
+    sort: {data: {Date_and_time: ASC}}
+    filter: {table: {eq: "Events"}, data: {Status: {eq: "Published"}, Upcoming: {eq: 1}, WBFOnly: {ne: true}}}
+  ) {
+    edges {
+      node {
+        data {
+          Name
+          Slug
+          Date_and_time
+          Location
+          Short_Description
+          Author_bio
+          Withfriends_url
+          Image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`)
 
     const homepage=homepageData.prismicHomePage.data;
     
