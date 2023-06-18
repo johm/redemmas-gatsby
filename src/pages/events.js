@@ -61,7 +61,7 @@ const EventsPage = () => {
 				<Event e={e.node.data} />
 			    </div>
 			)})}
-		</div>
+		</div> 
 		<div className="md:w-1/4 bg-stone-100 p-6  mb-6">
 		    <h3 className="border-b border-yellow-700 font-subhed text-xl mb-6" >And in the Baltimore Free School classroom...</h3>
 		    {eventsData.allAirtable.edges.filter(edge => edge.node.data.Location == "Free School Classroom").map((e,index) => {
