@@ -66,7 +66,7 @@ const Evs = ({eventsData})=>{
 		    <>
 		    <div key={ev.Slug} className="mcnTextContent">
 			<a href={"https://redemmas.org/events/"+ev.Slug}>
-			    <img width="100%" src={"https://redemmas.org"+ encodeURIComponent(ev.Image.localFiles[0].publicURL)} />
+			    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
 			</a>
 			<br /><br />
 			<h3><a href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
