@@ -38,7 +38,7 @@ const EventsPage = () => {
           Image {
             localFiles {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+                gatsbyImageData(placeholder: DOMINANT_COLOR, layout: CONSTRAINED)
               }
             }
           }

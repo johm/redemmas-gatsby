@@ -37,7 +37,7 @@
 	"gatsby-plugin-sitemap": "latest",
 	"gatsby-plugin-snipcart-advanced": "^1.0.3",
 	"gatsby-plugin-theme-ui": "latest",
-	"gatsby-source-airtable": "^2.2.1",
+	"gatsby-source-airtable": "^2.4.0",
 	"gatsby-source-filesystem": "latest",
 	"gatsby-source-prismic": "^5.2.4",
 	"gatsby-transformer-sharp": "latest",
