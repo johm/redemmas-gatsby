@@ -26,7 +26,6 @@
 	"caniuse-lite": "^1.0.30001434",
 	"gatsby": "^5.11.0",
 	"gatsby-awesome-pagination": "^0.3.8",
-	"gatsby-image": "latest",
 	"gatsby-plugin-gatsby-cloud": "latest",
 	"gatsby-plugin-google-analytics": "latest",
 	"gatsby-plugin-image": "latest",
