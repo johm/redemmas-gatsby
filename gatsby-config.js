@@ -16,6 +16,7 @@ module.exports = {
   },
     
     plugins: [
+	{ resolve: "gatsby-plugin-netlify",},
 	{
 	    resolve: `gatsby-plugin-theme-ui`,
 	},
