@@ -28,6 +28,9 @@ const EventTemplate = ({ data }) =>{
 	/>
 	<div className="lg:ml-24 lg:mr-24 ">
 	<h2 className="text-3xl md:text-4xl mb-3 font-text leading-tight text-stone-900">{doc.Name}</h2>
+	    { doc.Upcoming != 1 && 
+		<h3  className="text-2xl md:text-3xl mb-3 font-text leading-tight text-yellow-700 italic">This event has already happened.</h3>
+}
 	<div className="flex flex-wrap mb-6">
 	<div className="w-full md:w-1/2 font-subhed uppercase text-xl">
 	<div>{moment(doc.Date_and_time).tz('America/New_York').format("dddd, MMMM Do YYYY")}</div>
@@ -80,6 +83,7 @@ export const query = graphql`
 		Long_Description 
 		Author_bio
 		Withfriends_url
+                Upcoming
 		Image {
 		    localFiles {
 			childImageSharp {

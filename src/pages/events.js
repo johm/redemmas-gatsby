@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React, {useState,useEffect} from "react"
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 import SEO from "../components/seo"
@@ -73,6 +73,8 @@ const EventsPage = () => {
 
 		</div>
 	    </div>
+
+	    <div className="mb-6 font-text italic"><a className="text-yellow-700"  href="/eventarchive">See our archive of past events</a></div>
 	</InnerLayout>
     );
 
