@@ -61,7 +61,7 @@ const EventTemplate = ({ data }) =>{
 	{doc.Withfriends_url &&  <a href={doc.Withfriends_url} className="inline-block mt-1 mb-3 text-center  rounded-full bg-violet-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xl w-full">RSVP on withfriends</a>}
 	<Link to="/events" className="inline-block mt-1 text-center  rounded-full bg-yellow-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xl w-full">See all upcoming events</Link>
 
-	    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 mt-12 auto-rows-fr">
+	    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3  gap-8 mt-12 auto-rows-fr">
 	 	{ doc.Isbn_A &&
 		  <EventBook isbn={doc.Isbn_A} />
 		}
