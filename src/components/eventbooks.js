@@ -6,7 +6,7 @@ import Book from "../components/Book.js"
 const lf = new Intl.ListFormat('en');
 
 const EventBook = ({isbn}) => {
-    const [resultData, setResultData] = useState(false)
+    const [resultData, setResultData] = useState(results:[])
 
     useEffect(() => {
 	fetch(`${process.env.GATSBY_INVENTORY_SERVER}/titles.json?searchquery=${isbn}`)
