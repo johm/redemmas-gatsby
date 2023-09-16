@@ -7,7 +7,7 @@ import { GatsbyImage} from "gatsby-plugin-image";
 import SEO from '../../components/seo.js'
 import InnerLayout from "../../components/InnerLayout.js"
 import Markdown from "markdown-to-jsx"
-import EventsBook from "../components/eventbooks.js"
+import EventBook from "../../components/eventbooks.js"
 
 const EventTemplate = ({ data }) =>{
     if (!data || !data.airtable) return null
@@ -99,6 +99,8 @@ export const query = graphql`
 		Withfriends_url
                 Upcoming
                 Isbn_A
+                Isbn_B
+                Isbn_C
 		Image {
 		    localFiles {
 			childImageSharp {
