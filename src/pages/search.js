@@ -31,6 +31,8 @@ const SearchPage = ({location}) => {
 
     const [status, setStatus] = useState(spinner())
 
+
+    const [bookshop,setBookshop] = useState(false)
     
     const [url, setUrl] = useState(`https://redemmas.org/search`)
 
@@ -42,13 +44,16 @@ const SearchPage = ({location}) => {
 	     setResultData({...resultData,results: responseData})
 	     if (responseData.length===1){
 		 setStatus(" " + responseData.length + " result found.")
+		 setBookshop(false)
 	     }
 	     else if (responseData.length===0){
-		 setStatus("Sorry, no results found!")
+		 setStatus("Sorry, no results found.")
+		 setBookshop(true)
 	     }
 	    else {
 		 setStatus(" " + responseData.length + " results found.")
-		 }
+				 setBookshop(false)
+	    }
 	      })
 	
     }
@@ -86,7 +91,7 @@ const SearchPage = ({location}) => {
 
 	    <div className="mt-2 font-text text-2xl" >{status}</div>
 
-	    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 mt-12 auto-rows-fr">
+	    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 mt-4 auto-rows-fr">
 
 		    {resultData.results.map ((result,index) => {
 			return (
@@ -98,7 +103,11 @@ const SearchPage = ({location}) => {
 
 		
 	    </div>
-	    
+
+	    <div className={bookshop ? "" : "hidden" } >
+		<div className="font-text text-2xl mt-3 mb-3">But don't worry! You can buy most books in print and support Red Emma's via <a className="underline" href="https://bookshop.org/shop/redemmas">bookshop.org</a>:</div>  
+		<iframe width="300px" src="https://bookshop.org/widgets/search/3323" />
+	    </div>
 	</InnerLayout>
     )
 }
