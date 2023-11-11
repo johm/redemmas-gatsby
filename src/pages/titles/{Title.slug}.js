@@ -48,14 +48,14 @@ const TitleTemplate = ({ data }) =>{
 			 <div>${doc.latest_published_edition.list_price}</div>
 			 
 		     </div>
-
+		     <div className=" mt-6 ">
+			 <BuyButtons title={doc} edition={doc.latest_published_edition}/>
+		     </div>
+	
 		     <div className=" mt-6 font-text text-md exthtml">
 			 <Description title={doc} edition={doc.latest_published_edition}/>
 		     </div>
 		     
-		     <div className=" mt-6 ">
-			 <BuyButtons title={doc} edition={doc.latest_published_edition}/>
-		     </div>
 		 </div>
 	     </div>
 	 </div>
