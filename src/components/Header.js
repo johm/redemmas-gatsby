@@ -83,7 +83,7 @@ const Header = () => {
 		    })}
 		</ul>
 		<div className="font-text" >{mainMenu.data.footer.text}</div>
-		<div><a href="https://donorbox.org/red-emma-s-education-fund" className="block md:inline md:flex-1 border-2 rounded p-[3px] mb-[3px] md:mb-[0px] md:p-2  border-yellow-700  text-center leading-none hover:border-gray-400 focus:outline-none focus:border-gray-500 transition duration-150 ease-in-out">Donate to the Red Emma's Education Fund</a></div>
+		<div className="mt-6" ><a href="https://donorbox.org/red-emma-s-education-fund" className="font-subhed block md:inline md:flex-1 border-2 rounded p-[3px] mb-[3px] md:mb-[0px] md:p-2  border-yellow-700  text-center leading-none hover:border-gray-400 focus:outline-none focus:border-gray-500 transition duration-150 ease-in-out">Donate to the Red Emma's Education Fund</a></div>
 	    </div>
 	</>
 
