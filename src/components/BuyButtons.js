@@ -26,6 +26,7 @@ const BuyButtons = ({title,edition}) => {
 		      data-item-weight="750"	
 		      data-item-description={edition.isbn13}
 		      data-item-image={'https://old.redemmas.org'+ edition.cover_image_url}
+		      data-item-categories={ instock === "IN STOCK" ? "instock" : "" }
 		      data-item-name={ instock === "PREORDER" ? title.title + " [PREORDER]" : title.title }>
 		  {instock === "IN STOCK" &&  <>Add to cart</>}
 		  {instock === "PREORDER" &&  <>Preorder</>}
