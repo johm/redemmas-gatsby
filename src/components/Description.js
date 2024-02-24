@@ -19,7 +19,7 @@ const Description = ({title,edition}) => {
 	<div dangerouslySetInnerHTML={ {__html: description} } />
 
     )
-	}
+}
 
 export default Description
 

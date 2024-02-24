@@ -24,7 +24,7 @@ const Event = ({e}) => (
 	<div className="font-subhed uppercase">{e.Location}</div>
 	{e.Withfriends_url &&  <a href={e.Withfriends_url} className="inline-block mt-1 text-center  rounded-full bg-violet-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xs">RSVP on withfriends</a>}
 
-	<div className="font-text">{e.Short_Description}</div>
+	<div className="font-text pt-3">{e.Short_Description}</div>
     </div>
 
 )
