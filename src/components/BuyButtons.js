@@ -18,7 +18,7 @@ const BuyButtons = ({title,edition}) => {
     return (
 	<>
 
-	{ (instock !== "UNAVAILABLE" && instock !== "OUT OF PRINT") && 
+	{ (instock !== "UNAVAILABLE" && instock !== "OUT OF PRINT" && instock ) && 
 	      <button className="w-full snipcart-add-item rounded-full bg-red-400 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors duration-500"
 		      data-item-id={edition.key}
 		      data-item-price={edition.list_price}
