@@ -17,7 +17,7 @@ const BuyButtons = ({title,edition}) => {
 
     return (
 	<>
-	    { (! instock &&
+	    { ! instock &&
 <button className="w-full snipcart-add-item rounded-full bg-stone-100 text-stone-300 font-subhed px-3 py-0.5 uppercase "
 		      data-item-id={edition.key}
 		      data-item-price={edition.list_price}
