@@ -105,11 +105,11 @@ const IndexPage = () => {
     return (
 	<div>
 	<SEO />	
-	<div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/redemmas-possibility.webp')]">
+	<div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/may2024.webp')]">
 	</div>
 	<IndexTitle />
 	<div className="bg-stone-50 p-8 z-30  font-text">
-	<div className="p-16 border border-yellow-700 rounded text-2xl exthtml" >
+	    <div className="p-8 md:p-16 border border-yellow-700 rounded text-xl md:text-2xl exthtml" >
 
 	<PrismicRichText field={homepage.about.raw} components={{}} />
 
