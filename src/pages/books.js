@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import * as React from "react"
 import { graphql, useStaticQuery, navigate } from 'gatsby'
-
+import SEO from '../components/seo.js'
 import InnerLayout from "../components/InnerLayout.js"
 import Book from "../components/Book.js"
 import BookSearchForm from "../components/BookSearchForm.js"
@@ -74,6 +74,7 @@ const BooksPage = () => {
     
     return (
 	<InnerLayout>
+	<SEO title="Red Emma's | The Bookstore" description="Order from our worker-owned radical bookstore" image="../images/bookshopping.jpeg" />	
 	    <div className="mb-6 text-2xl md:text-6xl font-text text-stone-900 border-b border-yellow-700">The Bookstore</div>
 	    <div className="flex flex-wrap mb-6  ">
 		<div className="w-full md:w-1/2 font-text text-2xl mb-6 exthtml">
