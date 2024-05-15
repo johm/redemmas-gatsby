@@ -74,7 +74,7 @@ const BooksPage = () => {
     
     return (
 	<InnerLayout>
-	    <SEO title="Red Emma's | The Bookstore" description="Order from our worker-owned radical bookstore" image={BS} />	
+	    <SEO title="Red Emma's | The Bookstore" description="Order from our worker-owned radical bookstore" image={"https://redemmas.org" + BS} />	
 	    <div className="mb-6 text-2xl md:text-6xl font-text text-stone-900 border-b border-yellow-700">The Bookstore</div>
 	    <div className="flex flex-wrap mb-6  ">
 		<div className="w-full md:w-1/2 font-text text-2xl mb-6 exthtml">
