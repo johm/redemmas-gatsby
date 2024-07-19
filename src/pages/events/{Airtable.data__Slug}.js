@@ -38,7 +38,7 @@ const EventTemplate = ({ data }) =>{
 	<div>{doc.Location}</div>
 	</div>
 	<div className="w-full md:w-1/2">
-	{doc.Withfriends_url &&  <a href={doc.Withfriends_url} className="inline-block mt-1 text-center  rounded-full bg-violet-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xl w-full">RSVP on withfriends</a>}
+	{doc.Withfriends_url &&  <a href={doc.Withfriends_url} className="inline-block mt-1 text-center  rounded-full bg-violet-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xl w-full">RSVP now</a>}
 	</div>
 	</div>
 	
