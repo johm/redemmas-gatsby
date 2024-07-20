@@ -115,10 +115,10 @@ const IndexPage = () => {
 
 	</div>
 	</div>
-	<div className="flex flex-wrap w-full">
+	    <div className="grid w-full sm:grid-cols-2 gap-8 p-8">
 	    {homepage.image_blocks.map((image_block, index) => {
 		return (
-		    <div  onClick={() => navigate(image_block.link.url) } className="relative top-0 sm:w-1/2 w-full bg-blue-100 h-50vw bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ image_block.image.url}}>
+		    <div  onClick={() => navigate(image_block.link.url) } className="relative top-0 bg-blue-100 h-50vw bg-cover" style={{backgroundImage : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.20) 75%,  rgba(0, 0, 0, 0.90) 100%),url('+ image_block.image.url}}>
 			
 			<div className="absolute bottom-5 left-5 text-stone-100 font-subhed  text-6xl z-20">
 			    {image_block.title.text}
