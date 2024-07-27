@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { graphql } from 'gatsby'
 
 import { Seo } from '../components/seo.js'
@@ -31,6 +32,8 @@ const PageTemplate = ({ data }) => {
 			
 		    </div>
 		</div>
+		<div dangerouslySetInnerHTML={{ __html: doc.iframe.html }}>
+		</div>
 	    </div>
 	</InnerLayout>
     )
@@ -52,6 +55,9 @@ export const query = graphql`
 		    
 		}
 		body {
+		    html
+		}
+		iframe {
 		    html
 		}
 	    }
