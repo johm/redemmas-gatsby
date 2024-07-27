@@ -32,9 +32,15 @@ const PageTemplate = ({ data }) => {
 			
 		    </div>
 		</div>
-		<div dangerouslySetInnerHTML={{ __html: doc.iframe.html }}>
+		<div className="max-w-xl">
+		{ doc.iframe.raw.map((i,index) => {
+		    return (
+		<div dangerouslySetInnerHTML={{ __html: i.text }}>
 		</div>
-	    </div>
+		    )})}
+		</div>
+
+		</div>
 	</InnerLayout>
     )
 }
@@ -58,7 +64,7 @@ export const query = graphql`
 		    html
 		}
 		iframe {
-		    html
+		    raw
 		}
 	    }
 	    
