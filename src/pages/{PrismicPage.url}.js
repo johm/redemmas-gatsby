@@ -32,7 +32,7 @@ const PageTemplate = ({ data }) => {
 			
 		    </div>
 		</div>
-		<div className="max-w-xl">
+		<div className="max-w-xl md:max-w-2xl mx-auto">
 		{ doc.iframe.raw.map((i,index) => {
 		    return (
 		<div dangerouslySetInnerHTML={{ __html: i.text }}>
