@@ -55,14 +55,14 @@ const BookFestival2024Page = () => {
 
     return (
 	<InnerLayout>
-	    <SEO title="Waverly Book Festival: Schedule of talks" description="April 28-30th, 2023 * Baltimore, MD" image={WBFS} />	
-	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Book talks at the Waverly Book Festival</h1>
+	    <SEO title="Baltimore Book Festival: Red Emma's schedule" description="September 28-29th, 2024 * Baltimore, MD" />	
+	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Our events for the 2024 Baltimore Book Festival</h1>
 	    <div className="flex flex-wrap">
 		<div className="w-full md:w-1/3">
 		<a href=""><img src={BBF} alt="Baltimore Book Festival logo, with letters in front of a drawing of rowhouses opening like books"  /></a></div>
 		<div class="font-text w-full md:w-2/3 md:px-4">
 		    <p className="text-xl mb-2">
-			<Link className="text-yellow-900  uppercase font-subhed decoration-dashed hover:underline hover:text-yellow-700 transition-colors " to="https://baltimorebookfestival.com">The Baltimore Book Festival</Link> is taking place across the entire Waverly neighborhood from Friday, April 28th to Sunday April 30th, 2023.
+			<Link className="text-yellow-900  uppercase font-subhed decoration-dashed hover:underline hover:text-yellow-700 transition-colors " to="https://baltimorebookfestival.com">The Baltimore Book Festival</Link> is taking place across the entire Waverly neighborhood from Friday, September 27th to Sunday September 29th, 2024.
 		    </p>
 
 		    <p className="mb-2">Here's the events Red Emma's is organizing for the festival, inside our store and on the outdoor 32nd Street stage</p>
