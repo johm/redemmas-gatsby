@@ -54,7 +54,12 @@ const BuyButtons = ({title,edition}) => {
 	{edition.isbn13 && 
 	<a target="_blank" href={"https://bookshop.org/a/3323/"+edition.isbn13} className="block mt-1 text-center w-full  rounded-full bg-yellow-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-stone-800 transition-colors text-xs">Order via bookshop.org</a>
 }
-	{libro !== null &&
+	{edition.isbn13 && 
+	<a target="_blank" href={"https://bookshop.org/a/3323/"+edition.isbn13} className="block mt-1 text-center w-full  rounded-full bg-stone-900 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-yellow-800 transition-colors text-xs">Buy ebook via bookshop.org</a>
+}
+
+
+	    {libro !== null &&
 
 	 <a target="_blank" href={libro} className="block mt-1 text-center w-full  rounded-full bg-stone-600 text-stone-100 font-subhed px-3 py-0.5 uppercase hover:bg-yellow-300 transition-colors text-xs">Purchase audio book at libro.fm</a>
 	}
