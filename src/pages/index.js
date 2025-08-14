@@ -105,7 +105,7 @@ const IndexPage = () => {
     return (
 	<div>
 	<SEO />	 
-	    <div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/space.jpeg')]">
+	    <div className="h-screen w-screen bg-cover bg-center bg-top  brightness-75 bg-scroll bg-[url('../images/space.webp')]">
 	</div>
 	<IndexTitle />
 	<div className="bg-stone-50 p-8 z-30  font-text">
