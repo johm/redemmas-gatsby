@@ -59,7 +59,7 @@ const BookFestival2025Page = () => {
 	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Our events for the 2024 Baltimore Book Festival</h1>
 	    <div className="flex flex-wrap">
 		<div className="w-full md:w-1/3">
-		    <img src="https://baltimorebookfest.com/wp-content/uploads/2025/07/cropped-baltimorebookfest_finalcolorlogo_horiz_20250625.png"
+		    <img src="https://baltimorebookfest.com/wp-content/uploads/2025/07/cropped-baltimorebookfest_finalcolorlogo_horiz_20250625.png"></img>
 		</div>
 		<div class="font-text w-full md:w-2/3 md:px-4">
 		    <p className="text-xl mb-2">
