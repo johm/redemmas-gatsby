@@ -59,6 +59,8 @@ const BookFestival2025Page = () => {
 	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Our events for the 2024 Baltimore Book Festival</h1>
 	    <div className="flex flex-wrap">
 		<div className="w-full md:w-1/3">
+		    <img src="https://baltimorebookfest.com/wp-content/uploads/2025/07/cropped-baltimorebookfest_finalcolorlogo_horiz_20250625.png"
+		</div>
 		<div class="font-text w-full md:w-2/3 md:px-4">
 		    <p className="text-xl mb-2">
 			<Link className="text-yellow-900  uppercase font-subhed decoration-dashed hover:underline hover:text-yellow-700 transition-colors " to="https://baltimorebookfest.com">The Baltimore Book Festival</Link> is taking place across the entire Waverly neighborhood, Saturday, September 13th to Sunday September 14th, 2025.
