@@ -55,8 +55,8 @@ const BookFestival2025Page = () => {
 
     return (
 	<InnerLayout>
-	    <SEO title="Baltimore Book Festival: Red Emma's schedule" description="September 28-29th, 2024 * Baltimore, MD" />	
-	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Our events for the 2024 Baltimore Book Festival</h1>
+	    <SEO title="Baltimore Book Festival: Red Emma's schedule" description="September 13-14th, 2025 * Baltimore, MD" />	
+	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Our events for the 2025 Baltimore Book Festival</h1>
 	    <div className="flex flex-wrap">
 		<div className="w-full md:w-1/3">
 		    <img src="https://baltimorebookfest.com/wp-content/uploads/2025/07/cropped-baltimorebookfest_finalcolorlogo_horiz_20250625.png"></img>
@@ -66,7 +66,7 @@ const BookFestival2025Page = () => {
 			<Link className="text-yellow-900  uppercase font-subhed decoration-dashed hover:underline hover:text-yellow-700 transition-colors " to="https://baltimorebookfest.com">The Baltimore Book Festival</Link> is taking place across the entire Waverly neighborhood, Saturday, September 13th to Sunday September 14th, 2025.
 		    </p>
 
-		    <p className="mb-2">Here's the events Red Emma's is organizing for the festival, inside our store and on the outdoor 32nd Street stage</p>
+		    <p className="mb-2">Here's the events Red Emma's is organizing for the festival, inside our main space, in our downstairs classroom space, and on the outdoor 32nd Street stage</p>
 		</div>
 	    </div>
 	    <div className="md:grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12 auto-rows-fr">
