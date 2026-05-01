@@ -146,7 +146,7 @@ const ShortRow = ({events}) => {
 					verticalAlign:"top"}}>
 									<h4 style={{marginTop:"20px",
 					    textAlign:"left !important",
-						fontFamily:"Helvetica"}}><a style={{textDecoration:"none !important",
+						fontFamily:"Helvetica",fontSize:"16px"}}><a style={{textDecoration:"none !important",
 										     color:"#a96800"}} href={"https://redemmas.org/events/"+e.node.data.Slug}>{e.node.data.Name}</a></h4>
 
 			    </td>
@@ -156,9 +156,9 @@ const ShortRow = ({events}) => {
 		    {events.map((e,index) => {
 			return (
 			    <td style={{verticalAlign:"top"}}>
-				<h5 style={{fontFamily:"Helvetica",marginTop:"6px"}} className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
-				<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
-				<h5 style={{fontFamily:"Helvetica"}} className="">{e.node.data.Location}</h5>
+				<h5 style={{fontFamily:"Helvetica",marginTop:"6px",fontSize:"14px"}} className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+				<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}}  className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
+				<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}} className="">{e.node.data.Location}</h5>
 			    </td>
 			)})}
 		</tr>
@@ -166,7 +166,7 @@ const ShortRow = ({events}) => {
 		    {events.map((e,index) => {
 			return (
 			    <td style={{verticalAlign:"top"}}>
-				<h5 style={{fontFamily:"Helvetica"}} className="">
+				<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}} className="">
 				    <a href={e.node.data.Withfriends_url || "https://redemmas.org/events/"+e.node.data.Slug} className=""
 				       style={{fontFamily:"Helvetica",
 					       color:"#4c1d95",
