@@ -60,7 +60,7 @@ const Ev = ({ev}) => {
     return (
     	<>
 	    <div key={ev.Slug} className="mcnTextContent" style={{padding:"0px",
-								  marginTop:"20px"}}>
+								  marginTop:"40px"}}>
 		<a href={"https://redemmas.org/events/"+ev.Slug}>
 		    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
 		</a>
@@ -68,13 +68,16 @@ const Ev = ({ev}) => {
 		<h3 style={{paddingRight:"10px",
 			    paddingLeft:"10px"}}>
 		<a style={{textDecoration:"none !important"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
-		<table style={{marginTop:"10px"}}>
+		<table style={{marginTop:"10px",
+			       marginRight:"10px",
+			       marginLeft:"10px"}}>
 		    <tr>
 			<td width="60%">{ev.Short_Description}</td>
 			<td width="40%" style={{textAlign:"right"}}>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd MMMM D")}</h4>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
 			    <h4 className="">{ev.Location}</h4>
+			    <br />
 			    {ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style={{
 							   fontFamily:"Helvetica",
 							   border:"2px solid #4c1d95",
@@ -102,7 +105,8 @@ const ShortEv = ({ev}) => {
 	    <div key={ev.Slug} className="mcnTextContent" style={{width:"45%",
 								  paddingRight:"5%",
 								  float:"left"}} >
-		<h4 style={{marginTop:"20px"}}><a style={{textDecoration:"none !important",
+		<h4 style={{marginTop:"20px",
+			    text-align:"left !important"}}><a style={{textDecoration:"none !important",
 							  color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
 		<br />
 		<h5 style={{fontFamily:"Helvetica"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
@@ -134,13 +138,20 @@ const Evs = ({eventsData})=>{
 	    <table style={{backgroundColor:"#e2e8f0"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>
-
-			{eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,4).map((e,index) => {
-			    return (
-				<ShortEv ev={e.node.data} />
-		)}
-					     )}
-	    </td></tr></table>
+			
+			<div>
+			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2).map((e,index) => {
+				return (
+				    <ShortEv ev={e.node.data} />
+				)})}
+			</div>
+			<div>
+			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4).map((e,index) => {
+				return (
+				    <ShortEv ev={e.node.data} />
+				)})}
+			</div>
+		    </td></tr></table>
 	    <br />
 	    {eventsData.allAirtable.edges.filter(edge => ! edge.node.data.List_in_Courses_and_meet_ups).slice(3,6).map((e,index) => {
 		return (
@@ -149,14 +160,24 @@ const Evs = ({eventsData})=>{
 														      )}
 	    <table style={{backgroundColor:"#e2e8f0"}}>
 	<tr><td style={{padding:"20px"}}>
-		<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3> 
-	{eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,8).map((e,index) => {
-		return (
-		    <ShortEv ev={e.node.data} />
-		)}
-					     )}
-</td></tr></table>
-<br />
+		<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
+
+
+		<div>
+		    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6).map((e,index) => {
+			return (
+			    <ShortEv ev={e.node.data} />
+				)})}
+		</div>
+		<div>
+		    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8).map((e,index) => {
+			return (
+			    <ShortEv ev={e.node.data} />
+			)})}
+		</div>
+	
+	    </td></tr></table>
+	    <br />
 	    {eventsData.allAirtable.edges.filter(edge => ! edge.node.data.List_in_Courses_and_meet_ups).slice(6).map((e,index) => {
 		return (
 		    <Ev ev={e.node.data} />
