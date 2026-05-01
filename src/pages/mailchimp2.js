@@ -45,7 +45,7 @@ const EventsPage = () => {
     
     return (
 	<InnerLayout>
-
+	    
 
 	    <h1 className="text-4xl md:text-6xl mb-6 font-text text-stone-900 border-b border-yellow-700">Upcoming events</h1>
 		<textarea id="mytextarea" className="w-full h-screen">
@@ -106,8 +106,8 @@ const ShortEv = ({ev}) => {
 								  paddingRight:"5%",
 								  float:"left"}} >
 		<h4 style={{marginTop:"20px",
-			    text-align:"left !important"}}><a style={{textDecoration:"none !important",
-							  color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
+			    textAlign:"left !important"}}><a style={{textDecoration:"none !important",
+								      color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
 		<br />
 		<h5 style={{fontFamily:"Helvetica"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
 		<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
@@ -119,7 +119,7 @@ const ShortEv = ({ev}) => {
 			  style={{fontFamily:"Helvetica",
 				  color:"#4c1d95",
 				  textDecoration:"none",
-				 }} >RSVP and more info</a>
+				 }}>RSVP and more info</a>
 		</h5>
 	    </div>
 	    {`\n\n`}
@@ -136,8 +136,8 @@ const Evs = ({eventsData})=>{
 		return (
 		    <Ev ev={e.node.data} />
 		)}
-					     )}
-
+														      )}
+	    
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>
@@ -162,32 +162,30 @@ const Evs = ({eventsData})=>{
 		)}
 														      )}
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
-	<tr><td style={{padding:"20px"}}>
-		<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
+		<tr><td style={{padding:"20px"}}>
+			<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
 
 
-		<div>
-		    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6).map((e,index) => {
-			return (
-			    <ShortEv ev={e.node.data} />
+			<div>
+			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6).map((e,index) => {
+				return (
+				    <ShortEv ev={e.node.data} />
 				)})}
-		</div>
-		<div>
-		    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8).map((e,index) => {
-			return (
-			    <ShortEv ev={e.node.data} />
-			)})}
-		</div>
-	
-	    </td></tr></table>
+			</div>
+			<div>
+			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8).map((e,index) => {
+				return (
+				    <ShortEv ev={e.node.data} />
+				)})}
+			</div>
+			
+		    </td></tr></table>
 	    <br />
 	    {eventsData.allAirtable.edges.filter(edge => ! edge.node.data.List_in_Courses_and_meet_ups).slice(6).map((e,index) => {
 		return (
 		    <Ev ev={e.node.data} />
 		)})}
 	
-
-	    
 	</>
     )};
 
