@@ -71,7 +71,7 @@ const Ev = ({ev}) => {
 		<table style={{marginTop:"10px"}}>
 		    <tr>
 			<td width="60%">{ev.Short_Description}</td>
-			<td width="40%" style="text-align:right;">
+			<td width="40%" style={{textAlign:"right"}}>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd MMMM D")}</h4>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
 			    <h4 className="">{ev.Location}</h4>
