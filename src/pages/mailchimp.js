@@ -61,7 +61,7 @@ const Ev = ({ev}) => {
     	<>
 	    <div key={ev.Slug} className="mcnTextContent" style={{padding:"0px",
 								  marginTop:"20px",
-								  marginBottom:"20px"}}>
+								  marginBottom:"30px"}}>
 		<a href={"https://redemmas.org/events/"+ev.Slug}>
 		    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
 		</a>
