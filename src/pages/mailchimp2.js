@@ -132,11 +132,13 @@ const ShortEv = ({ev}) => {
 			
 
 const ShortRow = ({events}) => {
-    return (
+	console.log('ShortRow array: ',ShortRow)
+
+	return (
 	<>
 	    <table>
 		<tr>
-		    { events.map((e,index) => {
+			{ events.map((e,index) => {	
 			return (
 			    <td style={{width:"45%",
 					paddingRight:"5%"}}>
@@ -189,8 +191,8 @@ const Evs = ({eventsData})=>{
 	    
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
-			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>
-			    <ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2)} /> 
+			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>											
+				<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2)} /> 
 			    <ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4)} /> 				
 		    </td></tr></table>
 	    <br />
