@@ -83,10 +83,10 @@ const Ev = ({ev}) => {
 							   border:"2px solid #4c1d95",
 							   color:"#4c1d95",
 							   padding:"10px",
-							   paddingRight:"20px",
-							   paddingLeft:"20px",
+							   paddingRight:"10px",
+							   paddingLeft:"10px",
 							   textDecoration:"none",
- 				  			   borderRadius:"10px"}} >RSVP now!</a>}
+ 				  			   borderRadius:"10px"}} >RSVP</a>}
 			</td>
 		    </tr>
 		</table>
