@@ -192,7 +192,7 @@ const Evs = ({eventsData})=>{
 		)}
 														      )}
 	    
-	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
+	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px",width:"100%"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica",fontSize:"18px"}}>Courses, workshops, and meetups...</h3>											
 				<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2)} /> 
@@ -204,7 +204,7 @@ const Evs = ({eventsData})=>{
 		    <Ev ev={e.node.data} />
 		)}
 														      )}
-	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
+	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px",width:"100%"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica",fontSize:"18px"}}>More courses, workshops, and meetups...</h3>
 			<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6)} /> 
