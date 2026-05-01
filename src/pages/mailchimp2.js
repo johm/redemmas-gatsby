@@ -190,19 +190,8 @@ const Evs = ({eventsData})=>{
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>
-			
-			<div>
-			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2).map((e,index) => {
-				return (
-				    <ShortEv ev={e.node.data} />
-				)})}
-			</div>
-			<div style={{clear:"both"}}>
-			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4).map((e,index) => {
-				return (
-				    <ShortEv ev={e.node.data} />
-				)})}
-			</div>
+			    <ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2)} /> 
+			    <ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4)} /> 				
 		    </td></tr></table>
 	    <br />
 	    {eventsData.allAirtable.edges.filter(edge => ! edge.node.data.List_in_Courses_and_meet_ups).slice(3,6).map((e,index) => {
@@ -213,21 +202,8 @@ const Evs = ({eventsData})=>{
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
-
-
-			<div>
-			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6).map((e,index) => {
-				return (
-				    <ShortEv ev={e.node.data} />
-				)})}
-			</div>
-			<div style={{clear:"both"}}>
-			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8).map((e,index) => {
-				return (
-				    <ShortEv ev={e.node.data} />
-				)})}
-			</div>
-			
+			<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6)} /> 
+			<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8)} /> 				
 		    </td></tr></table>
 	    <br />
 	    {eventsData.allAirtable.edges.filter(edge => ! edge.node.data.List_in_Courses_and_meet_ups).slice(6).map((e,index) => {
