@@ -132,15 +132,18 @@ const ShortEv = ({ev}) => {
 			
 
 const ShortRow = ({events}) => {
-	console.log('ShortRow array: ',events)
+
 
 	return (
 	<>
 	    <table>
 		<tr>
 			{ events.map((e,index) => {	
-			return (
-			    <td style={{width:"45%",
+				console.log('ShortRow array element: ',e)
+				console.log('ShortRow array element name: ',e.Name)	
+	
+				return (
+				<td style={{width:"45%",
 					paddingRight:"5%"}}>
 				<h4 style={{marginTop:"20px",
 					    textAlign:"left !important"}}><a style={{textDecoration:"none !important",
