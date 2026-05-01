@@ -73,7 +73,7 @@ const Ev = ({ev}) => {
 			       marginRight:"10px",
 			       marginLeft:"10px"}}>
 		    <tr>
-			<td width="60%">{ev.Short_Description}</td>
+			<td width="60%"><div style={{fontSize:"14px"}}>{ev.Short_Description}</div></td>
 			<td width="40%" style={{textAlign:"right"}}>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd MMMM D")}</h4>
 			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
@@ -109,19 +109,19 @@ const ShortEv = ({ev}) => {
 	    <div key={ev.Slug} className="mcnTextContent" style={{width:"45%",
 								  paddingRight:"5%",
 								  float:"left"}} >
-		<h4 style={{marginTop:"20px",
+		<h4 style={{marginTop:"20px",fontSize:"16px",
 			    textAlign:"left !important"}}><a style={{textDecoration:"none !important",
 								      color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
 		<br />
-		<h5 style={{fontFamily:"Helvetica"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
-		<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
-		<h5 style={{fontFamily:"Helvetica"}} className="">{ev.Location}</h5>
+		<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+		<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
+		<h5 style={{fontFamily:"Helvetica",fontSize:"14px"}} className="">{ev.Location}</h5>
 		
 		<br />
 		<h5 style={{fontFamily:"Helvetica"}} className="">
 		<a href={ev.Withfriends_url || "https://redemmas.org/events/"+ev.Slug} className=""
 			  style={{fontFamily:"Helvetica",
-				  color:"#4c1d95",
+				  color:"#4c1d95",fontSize:"14px",
 				  textDecoration:"none",
 				 }}>RSVP and more info</a>
 		</h5>
@@ -156,7 +156,7 @@ const ShortRow = ({events}) => {
 		    {events.map((e,index) => {
 			return (
 			    <td style={{verticalAlign:"top"}}>
-				<h5 style={{fontFamily:"Helvetica"}} className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+				<h5 style={{fontFamily:"Helvetica",marginTop:"6px"}} className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
 				<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
 				<h5 style={{fontFamily:"Helvetica"}} className="">{e.node.data.Location}</h5>
 			    </td>
@@ -194,7 +194,7 @@ const Evs = ({eventsData})=>{
 	    
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
-			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>											
+			<h3 style={{fontFamily:"Helvetica",fontSize:"18px"}}>Courses, workshops, and meetups...</h3>											
 				<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(0,2)} /> 
 			    <ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4)} /> 				
 		    </td></tr></table>
@@ -206,7 +206,7 @@ const Evs = ({eventsData})=>{
 														      )}
 	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
-			<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
+			<h3 style={{fontFamily:"Helvetica",fontSize:"18px"}}>More courses, workshops, and meetups...</h3>
 			<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(4,6)} /> 
 			<ShortRow events={eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8)} /> 				
 		    </td></tr></table>
