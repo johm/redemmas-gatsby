@@ -132,7 +132,7 @@ const ShortEv = ({ev}) => {
 			
 
 const ShortRow = ({events}) => {
-	console.log('ShortRow array: ',ShortRow)
+	console.log('ShortRow array: ',events)
 
 	return (
 	<>
