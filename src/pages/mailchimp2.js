@@ -136,18 +136,16 @@ const ShortRow = ({events}) => {
 
 	return (
 	<>
-	    <table>
+	    <table width="100%">
 		<tr>
 			{ events.map((e,index) => {	
-				console.log('ShortRow array element: ',e)
-				console.log('ShortRow array element name: ',e.Name)	
-	
+					
 				return (
 				<td style={{width:"45%",
 					paddingRight:"5%"}}>
 				<h4 style={{marginTop:"20px",
 					    textAlign:"left !important"}}><a style={{textDecoration:"none !important",
-										     color:"#a96800"}} href={"https://redemmas.org/events/"+e.Slug}>{e.Name}</a></h4>
+										     color:"#a96800"}} href={"https://redemmas.org/events/"+e.node.data.Slug}>{e.node.data.Name}</a></h4>
 
 			    </td>
 			)})}
@@ -156,9 +154,9 @@ const ShortRow = ({events}) => {
 		    {events.map((e,index) => {
 			return (
 			    <td>
-				<h5 style={{fontFamily:"Helvetica"}} className="">{moment(e.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
-				<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(e.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
-				<h5 style={{fontFamily:"Helvetica"}} className="">{e.Location}</h5>
+				<h5 style={{fontFamily:"Helvetica"}} className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+				<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(e.node.data.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
+				<h5 style={{fontFamily:"Helvetica"}} className="">{e.node.data.Location}</h5>
 			    </td>
 			)})}
 		</tr>
@@ -167,7 +165,7 @@ const ShortRow = ({events}) => {
 			return (
 			    <td>
 				<h5 style={{fontFamily:"Helvetica"}} className="">
-				    <a href={e.Withfriends_url || "https://redemmas.org/events/"+e.Slug} className=""
+				    <a href={e.node.data.Withfriends_url || "https://redemmas.org/events/"+e.node.data.Slug} className=""
 				       style={{fontFamily:"Helvetica",
 					       color:"#4c1d95",
 					       textDecoration:"none",
