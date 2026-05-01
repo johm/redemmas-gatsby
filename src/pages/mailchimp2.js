@@ -148,7 +148,7 @@ const Evs = ({eventsData})=>{
 				    <ShortEv ev={e.node.data} />
 				)})}
 			</div>
-			<div>
+			<div style={{clear:"both"}}>
 			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(2,4).map((e,index) => {
 				return (
 				    <ShortEv ev={e.node.data} />
@@ -172,7 +172,7 @@ const Evs = ({eventsData})=>{
 				    <ShortEv ev={e.node.data} />
 				)})}
 			</div>
-			<div>
+			<div style={{clear:"both"}}>
 			    {eventsData.allAirtable.edges.filter(edge => edge.node.data.List_in_Courses_and_meet_ups).slice(6,8).map((e,index) => {
 				return (
 				    <ShortEv ev={e.node.data} />
