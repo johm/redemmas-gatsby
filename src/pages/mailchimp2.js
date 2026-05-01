@@ -113,11 +113,14 @@ const ShortEv = ({ev}) => {
 		<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
 		<h5 style={{fontFamily:"Helvetica"}} className="">{ev.Location}</h5>
 		
-		<br /> <a href={ev.Withfriends_url || "https://redemmas.org/events/"+ev.Slug} className=""
+		<br />
+		<h5 style={{fontFamily:"Helvetica"}} className="">
+		<a href={ev.Withfriends_url || "https://redemmas.org/events/"+ev.Slug} className=""
 			  style={{fontFamily:"Helvetica",
 				  color:"#4c1d95",
 				  textDecoration:"none",
 				 }} >RSVP and more info</a>
+		</h5>
 	    </div>
 	    {`\n\n`}
 	</>)
@@ -135,7 +138,7 @@ const Evs = ({eventsData})=>{
 		)}
 					     )}
 
-	    <table style={{backgroundColor:"#e2e8f0"}}>
+	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 		<tr><td style={{padding:"20px"}}>
 			<h3 style={{fontFamily:"Helvetica"}}>Courses, workshops, and meetups...</h3>
 			
@@ -158,7 +161,7 @@ const Evs = ({eventsData})=>{
 		    <Ev ev={e.node.data} />
 		)}
 														      )}
-	    <table style={{backgroundColor:"#e2e8f0"}}>
+	    <table style={{backgroundColor:"#e2e8f0",marginTop:"30px"}}>
 	<tr><td style={{padding:"20px"}}>
 		<h3 style={{fontFamily:"Helvetica"}}>More courses, workshops, and meetups...</h3>
 
