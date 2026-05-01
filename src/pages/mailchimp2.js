@@ -61,64 +61,64 @@ const Ev = ({ev}) => {
     	<>
 	    <div key={ev.Slug} className="mcnTextContent" style={{padding:"0px",
 								  marginTop:"20px"}}>
-			<a href={"https://redemmas.org/events/"+ev.Slug}>
-			    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
-			</a>
-			<br /><br />
+		<a href={"https://redemmas.org/events/"+ev.Slug}>
+		    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
+		</a>
+		<br /><br />
 		<h3 style={{paddingRight:"10px",
 			    paddingLeft:"10px"}}>
 		<a style={{textDecoration:"none !important"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h3>
 		<table style={{marginTop:"10px"}}>
-			    <tr>
-				<td width="60%">{ev.Short_Description}</td>
-				<td width="40%" style="text-align:right;">
-				    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd MMMM D")}</h4>
-				    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
-				    <h4 className="">{ev.Location}</h4>
-				    {ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style={{
-								   fontFamily:"Helvetica",
-								   border:"2px solid #4c1d95",
-								   color:"#4c1d95",
-								   padding:"10px",
-								   paddingRight:"20px",
-								   paddingLeft:"20px",
-								   textDecoration:"none",
- 				  				   borderRadius:"10px"}} >RSVP now!</a>}
-				</td>
-			    </tr>
-			</table>
-
-
-
-
-		    </div>
-	 		{`\n\n`}
-	    </>)
+		    <tr>
+			<td width="60%">{ev.Short_Description}</td>
+			<td width="40%" style="text-align:right;">
+			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd MMMM D")}</h4>
+			    <h4 className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h4>
+			    <h4 className="">{ev.Location}</h4>
+			    {ev.Withfriends_url &&  <a href={ev.Withfriends_url} className="" style={{
+							   fontFamily:"Helvetica",
+							   border:"2px solid #4c1d95",
+							   color:"#4c1d95",
+							   padding:"10px",
+							   paddingRight:"20px",
+							   paddingLeft:"20px",
+							   textDecoration:"none",
+ 				  			   borderRadius:"10px"}} >RSVP now!</a>}
+			</td>
+		    </tr>
+		</table>
+		
+		
+		
+		
+	    </div>
+	    {`\n\n`}
+	</>)
 };
 
 const ShortEv = ({ev}) => {
     return (
-    	    <>
-		<div key={ev.Slug} className="mcnTextContent" style={{width:"45%",
-								      paddingRight:"5%",
-								      float:"left"}} >
-		    <h4 style={{marginTop:"20px"}}><a style={{textDecoration:"none !important",
-							      color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
-			<br />
-		    <h5 style={{fontFamily:"Helvetica"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
-		    <h5 style={{fontFamily:"Helvetica"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
-		    <h5 style={{fontFamily:Helvetica"}} className="">{ev.Location}</h5>
-
-			<br /> <a href={ev.Withfriends_url || "https://redemmas.org/events/"+ev.Slug} className=""
-				  style={{fontFamily:"Helvetica",
-					  color:"#4c1d95",
-					  textDecoration:"none",
-					 }} >RSVP and more info</a>
-		    </div>
-	 		{`\n\n`}
-	    </>)
+    	<>
+	    <div key={ev.Slug} className="mcnTextContent" style={{width:"45%",
+								  paddingRight:"5%",
+								  float:"left"}} >
+		<h4 style={{marginTop:"20px"}}><a style={{textDecoration:"none !important",
+							  color:"#a96800"}} href={"https://redemmas.org/events/"+ev.Slug}>{ev.Name}</a></h4>
+		<br />
+		<h5 style={{fontFamily:"Helvetica"}} className="">{moment(ev.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+		<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(ev.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
+		<h5 style={{fontFamily:"Helvetica"}} className="">{ev.Location}</h5>
+		
+		<br /> <a href={ev.Withfriends_url || "https://redemmas.org/events/"+ev.Slug} className=""
+			  style={{fontFamily:"Helvetica",
+				  color:"#4c1d95",
+				  textDecoration:"none",
+				 }} >RSVP and more info</a>
+	    </div>
+	    {`\n\n`}
+	</>)
 };
-
+			
 
 
 const Evs = ({eventsData})=>{
