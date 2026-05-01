@@ -60,7 +60,8 @@ const Ev = ({ev}) => {
     return (
     	<>
 	    <div key={ev.Slug} className="mcnTextContent" style={{padding:"0px",
-								  marginTop:"40px"}}>
+								  marginTop:"20px",
+								  marginBottom:"20px"}}>
 		<a href={"https://redemmas.org/events/"+ev.Slug}>
 		    <img width="100%" src={"https://redemmas.org"+ encodeURI(ev.Image.localFiles[0].publicURL)} />
 		</a>
@@ -99,6 +100,9 @@ const Ev = ({ev}) => {
 	</>)
 };
 
+
+
+
 const ShortEv = ({ev}) => {
     return (
     	<>
@@ -126,6 +130,51 @@ const ShortEv = ({ev}) => {
 	</>)
 };
 			
+
+const ShortRow = ({events}) => {
+    return (
+	<>
+	    <table>
+		<tr>
+		    { events.map((e,index) => {
+			return (
+			    <td style={{width:"45%",
+					paddingRight:"5%"}}>
+				<h4 style={{marginTop:"20px",
+					    textAlign:"left !important"}}><a style={{textDecoration:"none !important",
+										     color:"#a96800"}} href={"https://redemmas.org/events/"+e.Slug}>{e.Name}</a></h4>
+
+			    </td>
+			)})}
+		</tr>
+		<tr>
+		    {events.map((e,index) => {
+			return (
+			    <td>
+				<h5 style={{fontFamily:"Helvetica"}} className="">{moment(e.Date_and_time).tz('America/New_York').format("ddd, MMMM D")}</h5>
+				<h5 style={{fontFamily:"Helvetica"}}  className="">{moment(e.Date_and_time).tz('America/New_York').format("h:mm a")}</h5>
+				<h5 style={{fontFamily:"Helvetica"}} className="">{e.Location}</h5>
+			    </td>
+			)})}
+		</tr>
+		<tr>
+		    {events.map((e,index) => {
+			return (
+			    <td>
+				<h5 style={{fontFamily:"Helvetica"}} className="">
+				    <a href={e.Withfriends_url || "https://redemmas.org/events/"+e.Slug} className=""
+				       style={{fontFamily:"Helvetica",
+					       color:"#4c1d95",
+					       textDecoration:"none",
+					      }}>RSVP and more info</a>
+		</h5>
+</td>
+			)})}
+		</tr>
+	    </table>
+	</>
+    )
+};
 
 
 const Evs = ({eventsData})=>{
